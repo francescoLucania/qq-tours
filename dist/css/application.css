@@ -104,13 +104,20 @@ h1 a {
 
 h2 {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 5rem;
-  line-height: 1;
+  font-size: 1.8rem;
+  line-height: 1.333;
   font-weight: 700;
 }
 
 h2 a {
   text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+  h2 {
+    font-size: 1.8rem;
+    line-height: 1.111;
+  }
 }
 
 h3 {
@@ -1249,13 +1256,14 @@ a.button {
 
 @media all and (max-width: 767px) {
   .site-footer__navigate-grid {
-    margin-bottom: -4rem;
+    margin-bottom: -2rem;
   }
 }
 
 .site-footer__navigate-grid > ul {
   flex: 0 0 50%;
   max-width: 50%;
+  margin-bottom: 2rem;
 }
 
 @media all and (max-width: 767px) {
@@ -1279,16 +1287,10 @@ a.button {
   }
 }
 
-@media all and (max-width: 767px) {
-  .site-footer__navigate-grid > ul {
-    margin-bottom: 4rem;
-  }
-}
-
 @media all and (min-width: 768px) {
   .site-footer__navigate-grid > ul {
-    flex: 0 0 21.667%;
-    max-width: 21.667%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }
 
@@ -1372,13 +1374,36 @@ a.button {
 
 @media all and (min-width: 980px) {
   .site-footer__logo {
+    flex: 0 0 8.333%;
+    max-width: 8.333%;
+    width: auto;
     margin: 0;
+  }
+}
+
+@media all and (min-width: 980px) and (max-width: 767px) {
+  .site-footer__logo {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 980px) and (min-width: 768px) {
+  .site-footer__logo {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 980px) and (min-width: 980px) {
+  .site-footer__logo {
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 
 .site-footer__logo > a {
   width: 6rem;
-  display: block;
 }
 
 @media all and (max-width: 767px) {
@@ -1393,7 +1418,7 @@ a.button {
     justify-content: flex-end;
     align-items: center;
     height: 4rem;
-    width: 8.5rem;
+    max-width: 8.5rem;
   }
 }
 
@@ -1411,6 +1436,13 @@ a.button {
   vertical-align: top;
 }
 
+@media all and (max-width: 767px) {
+  .site-footer__logo > a > img {
+    max-width: 6rem;
+    margin: 2rem  auto 0;
+  }
+}
+
 @media all and (min-width: 768px) {
   .site-footer__logo > a > img {
     max-width: 100%;
@@ -1423,6 +1455,109 @@ a.button {
     max-width: 100%;
     max-height: 100%;
   }
+}
+
+.photo-badges-container {
+  position: absolute;
+  top: .4rem;
+  left: .4rem;
+  right: .4rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -.8rem;
+}
+
+.tag-grid > a:not(:last-child),
+.tag-grid > div:not(:last-child) {
+  margin-right: .8rem;
+}
+
+.tag,
+.photo-badge {
+  font-size: 1.1rem;
+  line-height: 1.364;
+  display: block;
+  padding: .3rem 1.2rem .4rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  color: #fff;
+}
+
+.mod_no-touchevents .tag:hover, .mod_no-touchevents .tag.hover, .mod_no-touchevents
+.photo-badge:hover, .mod_no-touchevents
+.photo-badge.hover {
+  color: #fff;
+}
+
+.tag {
+  background: #9ea0a6;
+  color: #fff;
+}
+
+.photo-badge-navigate {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  list-style: none;
+}
+
+.photo-badge-navigate > li {
+  width: 50%;
+}
+
+.photo-badge-navigate > li > a {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  font-size: 1.1rem;
+  line-height: 1.364;
+  position: relative;
+  display: block;
+  padding: .3rem 1.2rem .4rem;
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  transition: background-color 0.4s;
+}
+
+.mod_no-touchevents .photo-badge-navigate > li > a:hover, .mod_no-touchevents .photo-badge-navigate > li > a.hover {
+  color: #fff;
+}
+
+.mod_no-touchevents .photo-badge-navigate > li > a:hover, .mod_no-touchevents .photo-badge-navigate > li > a.hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.photo-badge-navigate > li:nth-child(2n) {
+  position: relative;
+}
+
+.photo-badge-navigate > li:nth-child(2n)::before {
+  position: absolute;
+  top: 50%;
+  left: -0.5px;
+  z-index: 2;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 1.5rem;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  content: "";
+}
+
+.section {
+  margin: 1rem 0;
 }
 
 @media print {
@@ -1492,4 +1627,363 @@ a.button {
   height: auto;
   display: block;
   vertical-align: top;
+}
+
+.promo-information {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 1.6rem .7rem;
+  border: 1px solid #e6eaed;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 3px 9px 0 rgba(151, 158, 165, 0.65);
+}
+
+@media all and (min-width: 768px) {
+  .promo-information {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2.4rem 1.9rem;
+  }
+}
+
+@media print {
+  .promo-information {
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+.person-card {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+@media all and (min-width: 768px) {
+  .person-card {
+    margin-top: 3rem;
+  }
+}
+
+@media print {
+  .person-card {
+    margin-top: 2.8rem;
+    border-top: 2px solid;
+  }
+}
+
+@media all and (min-width: 980px) {
+  .person-card {
+    margin-top: 4rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .person-card__heading-grid {
+    display: flex;
+  }
+}
+
+@media print {
+  .person-card__heading-grid {
+    display: flex;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .person-card__heading {
+    display: flex;
+    align-items: center;
+    margin-left: -.8rem;
+    margin-right: -.8rem;
+    padding-bottom: calc(1rem - 1px);
+    padding-left: .8rem;
+    padding-right: .8rem;
+    border-bottom: 1px solid #dfe0e4;
+  }
+}
+
+@media print {
+  .person-card__heading {
+    border: 0;
+  }
+}
+
+.person-card__name {
+  margin-left: 1.5rem;
+  font-weight: 700;
+}
+
+@media all and (min-width: 768px) {
+  .person-card__name {
+    display: none;
+  }
+}
+
+@media print {
+  .person-card__name {
+    display: none;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .person-card__heading-contact-information {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+  }
+}
+
+@media print {
+  .person-card__heading-contact-information {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+  }
+}
+
+.person-card__heading-contact-information-item {
+  font-weight: 700;
+}
+
+.person-card__heading-contact-information-item[data-color="minor"] {
+  color: #0088cc;
+}
+
+.person-card__heading-contact-information-item[data-color="minor"] > a {
+  color: #0088cc;
+}
+
+@media all and (max-width: 767px) {
+  .person-card__heading-contact-information-item {
+    margin-left: -.8rem;
+    margin-right: -.8rem;
+    padding: calc(1rem - 1px) 0.8rem;
+  }
+  .person-card__heading-contact-information-item:not(:last-child) {
+    border-bottom: 1px solid #dfe0e4;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .person-card__heading-contact-information-item:not(.person-card__heading-contact-information-item--description):not(:first-child) {
+    position: relative;
+    margin-left: 2rem;
+  }
+  .person-card__heading-contact-information-item:not(.person-card__heading-contact-information-item--description):not(:first-child)::after {
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: -1rem;
+    -webkit-transform: translate(-50%, calc(-50% + 1px));
+            transform: translate(-50%, calc(-50% + 1px));
+    border-radius: 50%;
+    background: #9ea0a6;
+    content: "";
+  }
+}
+
+@media print {
+  .person-card__heading-contact-information-item:not(.person-card__heading-contact-information-item--description):not(:first-child) {
+    position: relative;
+    margin-left: 2rem;
+  }
+  .person-card__heading-contact-information-item:not(.person-card__heading-contact-information-item--description):not(:first-child)::after {
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: -1rem;
+    -webkit-transform: translate(-50%, calc(-50% + 1px));
+            transform: translate(-50%, calc(-50% + 1px));
+    border-radius: 50%;
+    background: #9ea0a6;
+    content: "";
+  }
+}
+
+.person-card__heading-contact-information-item--description {
+  font-size: 1.3rem;
+  line-height: 1.385;
+  width: 100%;
+  font-weight: normal;
+  color: #9ea0a6;
+}
+
+.person-card__heading-contact-information-item--description > a {
+  color: #9ea0a6;
+}
+
+.person-card__photo {
+  width: 3.2rem;
+  height: 3.2rem;
+  min-width: 3.2rem;
+}
+
+@media all and (min-width: 768px) {
+  .person-card__photo {
+    width: 4rem;
+    height: 4rem;
+    min-width: 4rem;
+    background-color: #eaeaea;
+    box-shadow: 0px 3px 9px 0px rgba(151, 158, 165, 0.65);
+  }
+}
+
+@media print {
+  .person-card__photo {
+    width: 4rem;
+    height: 4rem;
+    background-color: #eaeaea;
+    box-shadow: 0px 3px 9px 0px rgba(151, 158, 165, 0.65);
+  }
+}
+
+.person-card__photo > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.hotel-card {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 1.6rem .7rem;
+  border: 1px solid #e6eaed;
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+
+@media all and (min-width: 768px) {
+  .hotel-card {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+    padding: .9rem;
+  }
+}
+
+@media print {
+  .hotel-card {
+    border: 0;
+  }
+}
+
+.hotel-card__photo {
+  position: relative;
+  width: 29rem;
+}
+
+@media all and (max-width: 767px) {
+  .hotel-card__photo {
+    margin: 0 auto 1.6rem;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .hotel-card__photo {
+    margin-right: 1.6rem;
+  }
+}
+
+.hotel-card__photo > a > img,
+.hotel-card__photo > img {
+  display: block;
+  margin: 0 auto;
+  max-width: 29rem;
+  vertical-align: top;
+}
+
+.hotel-card__information .hotel-card__content p,
+.hotel-card__information > address {
+  font-size: 1.3rem;
+  line-height: 1.385;
+  font-style: normal;
+  color: #9ea0a6;
+}
+
+.hotel-card__information .hotel-card__content p:not(:last-child),
+.hotel-card__information > address:not(:last-child) {
+  margin-bottom: .4rem;
+}
+
+.hotel-card .hotel-card__content-hide {
+  display: none;
+}
+
+.hotel-card .hotel-card__open-hide-content {
+  font-size: 1.3rem;
+  line-height: 1.385;
+  color: #0088cc;
+}
+
+.mod_no-touchevents .hotel-card .hotel-card__open-hide-content:hover, .mod_no-touchevents .hotel-card .hotel-card__open-hide-content.hover {
+  text-decoration: underline;
+}
+
+.hotel-card__header {
+  margin-bottom: .4rem;
+}
+
+@media all and (min-width: 768px) {
+  .hotel-card__header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.hotel-card__title {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.333;
+  font-weight: 700;
+}
+
+.hotel-card__title a {
+  text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+  .hotel-card__title {
+    font-size: 1.8rem;
+    line-height: 1.111;
+  }
+}
+
+.hotel-card__footer {
+  margin-top: .8rem;
+}
+
+.hotel-card__footer-grid {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin: .8rem 0 -.8rem;
+}
+
+.hotel-card__footer-grid > div,
+.hotel-card__footer-grid > a {
+  display: block;
+  margin-bottom: .8rem;
+}
+
+.hotel-card__footer-grid > div:not(:last-child),
+.hotel-card__footer-grid > a:not(:last-child) {
+  margin-right: .8rem;
+}
+
+.hotel-card__footer-grid > div > img,
+.hotel-card__footer-grid > a > img {
+  vertical-align: top;
+  width: auto;
+  height: 2rem;
+}
+
+.hotel-card__footer-grid > div {
+  cursor: default;
 }

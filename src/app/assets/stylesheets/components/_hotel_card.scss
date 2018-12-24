@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+.hotel-card {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 1.6rem .7rem;
+    border: 1px solid rgb(230, 234, 237);
+    border-radius: $border-radius-base;
+    background-color: #fff;
+
+    @include mq(md) {
+        display: flex;
+        align-items: flex-start;
+        margin-left: 0;
+        margin-right: 0;
+        padding: .9rem;
+    }
+
+    @media print {
+        border: 0;
+    }
+
+    &__photo {
+        position: relative;
+        width: 29rem;
+
+        @include mq(sm) {
+            margin: 0 auto 1.6rem;;
+        }
+
+        @include mq(md) {
+            margin-right: 1.6rem;
+        }
+
+        > a > img,
+        > img {
+            display: block;
+            margin: 0 auto;
+            max-width: 29rem;
+            vertical-align: top;
+        }
+    }
+
+    &__information {
+        .hotel-card__content p,
+        > address {
+            @include text-md;
+
+            font-style: normal;
+            color: $color-light;
+
+            &:not(:last-child) {
+                margin-bottom: .4rem;
+            }
+        }
+    }
+
+    .hotel-card__content {
+
+    }
+
+    .hotel-card__content-hide {
+        display: none;
+    }
+
+    .hotel-card__open-hide-content {
+        @include text-md;
+        @include interact(text-decoration, underline);
+
+        color: $color-minor;
+    }
+
+    &__header {
+        margin-bottom: .4rem;
+
+        @include mq(md) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__title {
+        @include h2;
+    }
+
+    &__footer {
+        margin-top: .8rem;
+    }
+
+    &__footer-grid {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        margin: .8rem 0 -.8rem;
+
+        > div,
+        > a {
+            display: block;
+            margin-bottom: .8rem;
+
+            &:not(:last-child) {
+                margin-right: .8rem;
+            }
+
+            > img {
+                vertical-align: top;
+                width: auto;
+                height: 2rem;
+            }
+        }
+
+        > div {
+            cursor: default;
+        }
+    }
+}

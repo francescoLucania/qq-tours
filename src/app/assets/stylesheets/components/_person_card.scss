@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+.person-card {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2rem;
+
+    @include mq(md) {
+        margin-top: 3rem;
+    }
+
+    @media print {
+        margin-top: 2.8rem;
+        border-top: 2px solid;
+    }
+
+    @include mq(lg) {
+        margin-top: 4rem;
+    }
+
+    &__heading-grid {
+        @include mq(md) {
+            display: flex;
+        }
+
+        @media print {
+            display: flex;
+        }
+    }
+
+    &__heading {
+        @include mq(sm) {
+            display: flex;
+            align-items: center;
+            margin-left: -.8rem;
+            margin-right: -.8rem;
+            padding-bottom: calc(1rem - 1px);
+            padding-left: .8rem;
+            padding-right: .8rem;
+            border-bottom: 1px solid $color-border;
+        }
+
+        @media print {
+            border: 0;
+        }
+    }
+
+    &__name {
+        margin-left: 1.5rem;
+        font-weight: 700;
+
+        @include mq(md) {
+            display: none;
+        }
+
+        @media print {
+            display: none;
+        }
+    }
+
+    &__heading-contact-information {
+
+        @include mq(md) {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-left: map_get($mq-container-indents, 'md');
+        }
+
+        @media print {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-left: map_get($mq-container-indents, 'md');
+        }
+    }
+
+    &__heading-contact-information-item {
+        font-weight: 700;
+
+        &[data-color="minor"] {
+            color: $color-minor;
+
+            > a {
+                color: $color-minor;
+            }
+        }
+
+        @include mq(sm) {
+            margin-left: -.8rem;
+            margin-right: -.8rem;
+            padding: calc(1rem - 1px) .8rem;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $color-border;
+            }
+        }
+
+        @include mq(md) {
+            &:not(.person-card__heading-contact-information-item--description) {
+                &:not(:first-child) {
+                    position: relative;
+                    margin-left: map_get($mq-container-indents, 'md');
+
+                    &::after {
+                        @include size(.5rem);
+
+                        position: absolute;
+                        top: 50%;
+                        left: -1rem;
+                        transform: translate(-50%,calc(-50% + 1px));
+                        border-radius: 50%;
+                        background: $color-light;
+                        content: "";
+                    }
+                }
+            }
+        }
+
+        @media print {
+            &:not(.person-card__heading-contact-information-item--description) {
+                &:not(:first-child) {
+                    position: relative;
+                    margin-left: map_get($mq-container-indents, 'md');
+
+                    &::after {
+                        @include size(.5rem);
+
+                        position: absolute;
+                        top: 50%;
+                        left: -1rem;
+                        transform: translate(-50%,calc(-50% + 1px));
+                        border-radius: 50%;
+                        background: $color-light;
+                        content: "";
+                    }
+                }
+            }
+        }
+
+        &--description {
+            @include text-md;
+
+            width: 100%;
+            font-weight: normal;
+            color: $color-light;
+
+            > a {
+                color: $color-light;
+            }
+        }
+    }
+
+    &__photo {
+        @include size(3.2rem);
+
+        min-width: 3.2rem;
+
+        @include mq(md) {
+            @include size(4rem);
+
+            min-width: 4rem;
+            background-color: rgb(234, 234, 234);
+            box-shadow: 0px 3px 9px 0px rgba(151, 158, 165, 0.65);
+        }
+
+        @media print {
+            @include size(4rem);
+
+            background-color: rgb(234, 234, 234);
+            box-shadow: 0px 3px 9px 0px rgba(151, 158, 165, 0.65);
+        }
+
+        > img {
+            @include size(100%);
+
+            border-radius: 4px;
+        }
+    }
+}

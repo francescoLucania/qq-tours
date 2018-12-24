@@ -37,18 +37,16 @@
         @include grid;
 
         @include mq(sm) {
-            margin-bottom: -1 * map_get($mq-container-indents, 'sm') * 2;
+            margin-bottom: -1 * map_get($mq-container-indents, 'sm');
         }
 
         > ul {
             @include grid-col(1/2);
 
-            @include mq(sm) {
-                margin-bottom: map_get($mq-container-indents, 'sm') * 2;
-            }
+            margin-bottom: map_get($mq-container-indents, 'sm');
 
             @include mq(md) {
-                @include grid-col(1.3/6);
+                @include grid-col(3/6);
             }
 
             @include mq(lg) {
@@ -80,12 +78,14 @@
         margin: 0 auto;
 
         @include mq(lg) {
+            @include grid-col(1/12);
+
+            width: auto;
             margin: 0;
         }
 
         > a {
             width: 6rem;
-            display: block;
 
             @include mq(sm) {
                 margin:  map_get($mq-container-indents, 'sm') * 2 auto 0;
@@ -96,7 +96,7 @@
                 justify-content: flex-end;
                 align-items: center;
                 height: 4rem;
-                width: 8.5rem;
+                max-width: 8.5rem;
             }
 
             @media print {
@@ -109,6 +109,11 @@
                 display: block;
                 width: auto;
                 vertical-align: top;
+
+                @include mq(sm) {
+                    max-width: 6rem;;
+                    margin: 2rem  auto 0;
+                }
 
                 @include mq(md) {
                     max-width: 100%;
