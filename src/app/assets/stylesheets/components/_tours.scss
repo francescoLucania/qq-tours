@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 .tours {
+    margin-top: .8rem;
 
     > .tour {
         &:not(:first-child) {
@@ -11,8 +12,260 @@
 }
 
 .tour {
+    padding: calc(1rem - 1px);
     border-radius: 2px;
-    border: solid 1px rgba(177, 180, 189);
-    background-color: rgba(255, 255, 255);
-    opacity: 0.4;
+    border: solid 1px $color-border;
+    background-color: #fff;
+
+    @include mq(sm) {
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+
+    &__header {
+        margin-bottom: 1.6rem;
+
+        @include mq(md) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__header-col {
+        display: block;
+
+        &:not(:last-child) {
+            @include mq(md) {
+                max-width: 50%;
+                margin-right: map_get($mq-container-indents, 'md');
+            }
+        }
+    }
+
+    &__header-agency-information {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__header-logo-image {
+        display: block;
+        margin-right: map_get($mq-container-indents, 'md');
+        max-width: 5rem;
+
+        > img {
+            max-width: 100%;
+            height: auto;
+            vertical-align: top;
+        }
+    }
+
+    &__header-name {
+        @include text-md;
+
+        color: $color-light;
+
+        > a {
+            color: inherit;
+        }
+    }
+
+    &__container {
+        @include mq(md) {
+            @include grid(x,flex-start,flex-start);
+
+            flex-wrap: wrap;
+        }
+    }
+
+    .tour__date-information-col {
+        @include mq(sm) {
+            margin: 0 calc(-1rem - 1px);
+            padding: calc(1rem - 1px);
+
+            &:first-child {
+                padding-top: calc(1rem - 1px);
+            }
+
+            &:not(:last-child) {
+                padding-bottom: calc(1rem - 1px);
+                border-bottom: 1px solid $color-border;
+            }
+        }
+    }
+
+    &__fb-col,
+    &__date-information-col {
+        @include mq(md) {
+            @include grid-col(2/6);
+        }
+
+        @include mq(lg) {
+            @include grid-col(2.5/12);
+        }
+    }
+
+    &__price-and-tags-col {
+        @include mq(sm) {
+            margin-top: 1.8rem;
+        }
+
+        @include mq(md) {
+            margin-left: auto;
+        }
+
+        @include mq(lg) {
+            @include grid-col(4.4/12);
+        }
+    }
+
+    &__price-and-tags-grid {
+        @include mq(sm) {
+            text-align: center;
+        }
+
+        @include mq(lg) {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+
+    &__flight-information-col {
+        @include mq(md) {
+            @include grid-col(4/6);
+        }
+
+        @include mq(lg) {
+            @include grid-col(2.5/12);
+        }
+
+    }
+
+    &__flight-information-box {
+        @include mq(md) {
+            @include grid;
+
+            margin-top: .8rem;
+        }
+
+        @include mq(lg) {
+            display: block;
+            margin-top: 0;
+        }
+    }
+
+    &__flight-information-item {
+
+        .tour__flight-information-col & {
+            @include mq(sm) {
+                margin: 0 calc(-1rem - 1px);
+                padding: calc(1rem - 1px);
+                border-bottom: 1px solid $color-border;
+
+                &:first-child {
+                    padding-top: calc(1rem - 1px);
+                }
+            }
+        }
+
+        @include mq(md) {
+            @include grid-col(1/2);
+        }
+
+        @include mq(lg) {
+            flex: auto;
+            max-width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+            width: 100%;
+        }
+
+        &:not(:last-child) {
+            @include mq(lg) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__col-title,
+    &__col-description {
+        > a {
+            color: inherit;
+        }
+    }
+
+    &__col-title {
+        @include text-md;
+
+        display: flex;
+        font-weight: 600;
+        color: $color-brand;
+
+        .tour__fb-col & {
+            @include mq(sm) {
+                margin: 0 calc(-1rem - 1px);
+                padding: calc(1rem - 1px);
+                border-bottom: 1px solid $color-border;
+
+                &:first-child {
+                    padding-top: calc(1rem - 1px);
+                }
+            }
+        }
+    }
+
+    &__col-description {
+        @include text-md;
+
+        color: $color-light;
+
+        .tour__col-title & {
+            margin-left: .8rem;
+            display: inline;
+        }
+    }
+
+    &__price-box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.2rem;
+
+        @include mq(sm) {
+            flex-direction: row-reverse;
+        }
+
+        @include mq(md) {
+            justify-content: flex-end;
+        }
+
+        @include mq(lg) {
+            display: block;
+            margin-right: 1.6rem;
+            margin-bottom: 0;
+        }
+    }
+
+    &__price ,
+    &__old-price {
+        text-align: right;
+
+        > a {
+            color: inherit;
+        }
+    }
+
+    &__price {
+        @include font(1.8rem, 1.8rem);
+    }
+
+    &__old-price {
+        @include text-md;
+
+        text-decoration: line-through;
+        color: $color-light;
+
+        @include mq(sm) {
+            margin-right: .8rem;
+        }
+    }
 }

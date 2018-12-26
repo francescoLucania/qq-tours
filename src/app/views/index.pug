@@ -11,42 +11,7 @@ block main
 
     .section
         .container
-            .hotel-card
-                .hotel-card__photo
-                    a(href='#')
-                        img(src='img/hotel.jpg' alt='Royal Beach Resort & Spa 5*')
-                    .photo-badges-container
-                        a.photo-badge(href='#') Все 35 фото
-
-                    ul.photo-badge-navigate
-                        li
-                            a(href='#') Видео-обзор
-
-                        li
-                            a(href='#') 3D-тур
-
-                article.hotel-card__information
-                    header.hotel-card__header
-                        h3.hotel-card__title Royal Beach Resort & Spa 5*
-
-                    address Шарджа, ОАЭ
-                    .hotel-card__content
-                        p Семейный отдых в отеле Pilot Beach Resort&SPA, Крит! Команда аниматоров организует для наших...
-                        .hotel-card__content-hide
-                            p Семейный отдых в отеле Pilot Beach Resort&SPA, Крит! Команда аниматоров организует для наших. Семейный отдых в отеле Pilot Beach Resort&SPA, Крит! Команда аниматоров организует для наших. Семейный отдых в отеле Pilot Beach Resort&SPA, Крит! Команда аниматоров организует для наших. Семейный отдых в отеле Pilot Beach Resort&SPA, Крит! Команда аниматоров организует для наших. Семейный отдых в отеле Pilot Beach Resort&SPA, Крит! Команда аниматоров организует для наших. Семейный отдых в отеле Pilot Beach Resort&SPA, Крит! Команда аниматоров организует для наших.
-                        a.hotel-card__open-hide-content(href='#') Полное описание
-
-                    footer.hotel-card__footer
-                        .hotel-card__footer-grid
-                            a(href='#' target='_blank'): img(src='img/icons/TripAdvisor.jpg' alt='TripAdvisor')
-                            a(href='#' target='_blank'): img(src='img/icons/ya.jpg' alt='Yandex')
-                            a(href='#' target='_blank'): img(src='img/icons/google.jpg' alt='Google')
-
-                        .hotel-card__footer-grid
-                            .tag Тренажерный зал
-                            .tag Библиотека
-                            .tag Wi-Fi
-                            .tag Конференц-зал
-
+            include components/_hotel_card
+            include components/_tours_1
 
 

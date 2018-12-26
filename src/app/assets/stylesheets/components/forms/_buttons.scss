@@ -3,9 +3,12 @@
 @if $enable-buttons == true {
     .button {
         display: inline-block;
-        padding: .5rem 1.5rem;
-        background: $color-light;
-        color: #fff;
+        padding: calc(.9rem - 1px) calc(1.5rem - 1px) calc(1.2rem - 1px);
+        border-radius: $border-radius-base;
+        border: 1px solid $color-minor;
+        background: transparent;
+        white-space: nowrap;
+        color: $color-minor;
         text-align: center;
 
         @at-root a#{&} {
@@ -17,6 +20,8 @@
         }
 
         &.button--block {
+            @include font(1.3rem, 1.5rem);
+
             display: block;
             width: 100%;
         }
