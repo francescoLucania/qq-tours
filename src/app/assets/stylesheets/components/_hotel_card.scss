@@ -22,21 +22,24 @@
 
     &__photo {
         position: relative;
-        width: 29rem;
 
         @include mq(sm) {
-            margin: 0 auto 1.6rem;;
+            margin: 0 auto 1.6rem;
+            width: 100%;
         }
 
         @include mq(md) {
             margin-right: 1.6rem;
         }
 
+        > a {
+            display: block;
+        }
+
         > a > img,
         > img {
             display: block;
             margin: 0 auto;
-            max-width: 29rem;
             vertical-align: top;
         }
     }

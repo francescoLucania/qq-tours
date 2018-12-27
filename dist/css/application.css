@@ -1936,12 +1936,12 @@ a.button {
 
 .hotel-card__photo {
   position: relative;
-  width: 29rem;
 }
 
 @media all and (max-width: 767px) {
   .hotel-card__photo {
     margin: 0 auto 1.6rem;
+    width: 100%;
   }
 }
 
@@ -1951,11 +1951,14 @@ a.button {
   }
 }
 
+.hotel-card__photo > a {
+  display: block;
+}
+
 .hotel-card__photo > a > img,
 .hotel-card__photo > img {
   display: block;
   margin: 0 auto;
-  max-width: 29rem;
   vertical-align: top;
 }
 
