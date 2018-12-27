@@ -250,3 +250,9 @@ if (enable.components.wysiwyg === true) {
         $(this).wrap('<div class="wysiwyg__video"/>');
     });
 }
+'use strict';
+
+tippy.setDefaults({
+    arrow: true,
+    placement: 'bottom'
+});

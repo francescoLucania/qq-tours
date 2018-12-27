@@ -8,8 +8,14 @@ header.site-header(role='header')
                 h1.site-header__title: a(href='#') Турагентство E-travel
 
             .site-header__actions
-                a(href='tel:889206616644') +7 (920) 661-66-44
-                a(href='mailto:ds@qui-quo.ru' data-color="minor") ds@qui-quo.ru
+                a(href='tel:889206616644')
+                    svg.icon(role='img')
+                        use(xlink:href='img/icons.svg#icon-phone')
+                    | +7 (920) 661-66-44
+                a(href='mailto:ds@qui-quo.ru' data-color="minor")
+                    svg.icon(role='img')
+                        use(xlink:href='img/icons.svg#icon-mail')
+                    | ds@qui-quo.ru
 
 .print-header-content
     .container

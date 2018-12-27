@@ -19,7 +19,13 @@
           <div class="site-header__information"><a class="site-header__logo" href="#"><img src="img/logo.png" alt="Company name" title="Company name"></a>
             <h1 class="site-header__title"><a href="#">Турагентство E-travel</a></h1>
           </div>
-          <div class="site-header__actions"><a href="tel:889206616644">+7 (920) 661-66-44</a><a href="mailto:ds@qui-quo.ru" data-color="minor">ds@qui-quo.ru</a></div>
+          <div class="site-header__actions"><a href="tel:889206616644">
+              <svg class="icon" role="img">
+                <use xlink:href="img/icons.svg#icon-phone"></use>
+              </svg>+7 (920) 661-66-44</a><a href="mailto:ds@qui-quo.ru" data-color="minor">
+              <svg class="icon" role="img">
+                <use xlink:href="img/icons.svg#icon-mail"></use>
+              </svg>ds@qui-quo.ru</a></div>
         </div>
       </div>
     </header>
@@ -43,7 +49,7 @@
             </div>
             <div class="person-card">
               <div class="person-card__heading-grid">
-                <div class="person-card__heading">
+                <div class="person-card__heading person-card__heading--mobile-options">
                   <div class="person-card__photo"><img src="img/photo.jpg" alt="Оксана Иванова"></div>
                   <div class="person-card__name"><a href="#">Оксана Иванова</a></div>
                 </div>
@@ -111,19 +117,25 @@
                   <div class="tour__col-description">27 июля (вс) - 08 авг (чт)</div>
                 </div>
                 <div class="tour__fb-col">
-                  <h4 class="tour__col-title">FB</h4>
-                  <h4 class="tour__col-title">2Adl+1Chd 2-3, 12+, 12+</h4>
+                  <h4 class="tour__col-title">FB
+                    <button class="button-tooltip js-button-tooltip" data-tippy="I'm a tooltip!"></button>
+                  </h4>
+                  <h4 class="tour__col-title">2Adl+1Chd 2-3, 12+, 12+
+                    <button class="button-tooltip js-button-tooltip" data-tippy="I'm a tooltip!"></button>
+                  </h4>
                 </div>
                 <div class="tour__flight-information-col">
                   <div class="tour__flight-information-box">
                     <div class="tour__flight-information-item">
                       <h4 class="tour__col-title"><a href="#">14.07 23:05</a>
                         <div class="tour__col-description">Домодедово</div>
+                        <button class="button-tooltip js-button-tooltip" data-tippy="Бизнес класс по запросу"></button>
                       </h4>
                     </div>
                     <div class="tour__flight-information-item">
                       <h4 class="tour__col-title"><a href="#">28.07 13:05</a>
                         <div class="tour__col-description">Ханья (HNY)</div>
+                        <button class="button-tooltip js-button-tooltip" data-tippy="Бизнес класс по запросу"></button>
                       </h4>
                     </div>
                   </div>
@@ -135,6 +147,12 @@
                       <div class="tour__old-price">160 090 RUB</div>
                     </div><a class="button" href="#">Хочу купить этот тур</a>
                   </div>
+                </div>
+              </div>
+              <div class="tour-comment">
+                <div class="tour-comment__photo"><a href="#"><img src="img/photo.jpg" alt="name"></a></div>
+                <div class="tour-comment__content">
+                  <p>Цена высокая, потому что вылет из Внуково, не надо будет стоять в пробке на МКАДе</p>
                 </div>
               </div>
             </div>

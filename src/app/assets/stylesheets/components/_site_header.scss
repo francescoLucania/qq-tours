@@ -120,12 +120,18 @@
             }
         }
 
+        @include mq(lg) {
+            margin-top: .6rem;
+        }
+
         @media print {
             align-items: center;
             min-height: 2rem;
         }
 
         > a {
+            @include interact(fill, $color-minor, 'hover .icon');
+
             white-space: nowrap;
             font-weight: 700;
 
@@ -135,9 +141,25 @@
 
             &[data-color="minor"] {
                 color: $color-minor;
+
+                > .icon {
+                    margin-right: .8rem;
+                    fill: $color-minor;
+                }
+            }
+
+            > .icon {
+                @include size(2.4rem);
+
+                display: none;
+                position: relative;
+                top: -.2rem;
+                fill: $color-brand;
+
+                @include mq(lg) {
+                    display: inline-block;
+                }
             }
         }
     }
-
-    //box-shadow: 0px 3px 9px 0px rgba(151, 158, 165, 0.65);
 }
