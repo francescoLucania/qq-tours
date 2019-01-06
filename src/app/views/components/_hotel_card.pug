@@ -14,7 +14,25 @@
 
     article.hotel-card__information
         header.hotel-card__header
-            h3.hotel-card__title Royal Beach Resort & Spa 5*
+            h3.hotel-card__title
+
+                a(href='#') Royal Beach Resort & Spa 5*&nbsp;<span class='hotel-card__visits-link'><i></i> 3 клика</span>
+
+            .hotel-card__header-rating
+                .top-hotels
+                    b(data-rating='4.6')
+                    span TopHotels
+
+                .tripadvisor
+                    ul
+                        li(data-value='1'): span
+                        li(data-value='1'): span
+                        li(data-value='1'): span
+                        li(data-value='1'): span
+                        li(data-value='0.5'): span
+
+                    span Tripadvisor
+
 
         address Шарджа, ОАЭ
         .hotel-card__content

@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+.hotel-box {
+    @media print {
+        margin: 0 -1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 2px solid #000;
+
+        &:not(:last-child) {
+            margin-bottom: map_get($mq-container-indents, 'md')
+        }
+    }
+}
+
 .hotel-card {
     margin-left: -1rem;
     margin-right: -1rem;
@@ -17,6 +30,7 @@
     }
 
     @media print {
+        padding-top: 0;
         border: 0;
     }
 
@@ -25,11 +39,15 @@
 
         @include mq(sm) {
             margin: 0 auto 1.6rem;
-            width: 100%;
+            width: 29rem;
         }
 
         @include mq(md) {
             margin-right: 1.6rem;
+        }
+
+        @media print {
+            display: none;
         }
 
         > a {
@@ -74,11 +92,82 @@
     }
 
     &__header {
+        display: flex;
         margin-bottom: .4rem;
 
+        @include mq(sm) {
+            flex-direction: column;
+        }
+
         @include mq(md) {
-            display: flex;
             justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        @media print {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        > h3 {
+            @include mq(sm) {
+                order: 2;
+            }
+
+            max-width: 50%;
+        }
+    }
+
+    &__header-rating {
+        display: flex;
+
+        @include mq(sm) {
+            order: 1;
+            margin-bottom: 1.6rem;
+        }
+
+        @include mq(md) {
+            justify-content: space-between;
+        }
+
+        @media print {
+            order: 2
+        }
+
+
+        > div {
+            &:not(:last-child) {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    &__visits-link {
+        @include text-sm;
+
+        position: relative;
+        top: -2px;
+        display: inline-block;
+        color: $color-light;
+
+        &:not(:first-child) {
+            margin-left: 1rem;
+        }
+
+        > i {
+            @include size(.8rem, .8rem);
+
+            position: relative;
+            display: inline-block;
+            top: 0;
+            margin-right: .3rem;
+            background: {
+                position: 50%;
+                size: contain;
+                image: url(../img/icons/cursor.png);
+                repeat: no-repeat;
+            };
         }
     }
 

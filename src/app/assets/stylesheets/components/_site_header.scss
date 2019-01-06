@@ -2,7 +2,7 @@
 
 .site-header {
     padding-top: 1.4rem;
-    padding-bottom: 3.2rem;
+    padding-bottom: 2rem;
     border-bottom: 1px solid $color-border;
     background: #fff;
 
@@ -17,6 +17,7 @@
     }
 
     @media print {
+        margin-top: 4rem;
         padding-top: 1.2rem;
         padding-bottom: 1.2rem;
         border: 0;

@@ -41,7 +41,7 @@
         }
 
         @media print {
-            border: 0;
+            display: none;
         }
     }
 
@@ -71,7 +71,7 @@
             display: flex;
             align-items: flex-start;
             flex-wrap: wrap;
-            margin-left: map_get($mq-container-indents, 'md');
+            margin-left: 0;
         }
     }
 
@@ -119,22 +119,8 @@
 
         @media print {
             &:not(.person-card__heading-contact-information-item--description) {
-                &:not(:first-child) {
-                    position: relative;
-                    margin-left: map_get($mq-container-indents, 'md');
-
-                    &::after {
-                        @include size(.5rem);
-
-                        position: absolute;
-                        top: 50%;
-                        left: -1rem;
-                        transform: translate(-50%,calc(-50% + 1px));
-                        border-radius: 50%;
-                        background: $color-light;
-                        content: "";
-                    }
-                }
+                padding-bottom: 0;
+                border: 0;
             }
         }
 

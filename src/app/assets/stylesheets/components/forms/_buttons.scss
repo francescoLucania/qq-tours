@@ -25,5 +25,9 @@
             display: block;
             width: 100%;
         }
+
+        @media print {
+            display: none !important;
+        }
     }
 }

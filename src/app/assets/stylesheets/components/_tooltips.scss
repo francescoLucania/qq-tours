@@ -18,6 +18,37 @@
         }
     }
 
+    @media print {
+        display: none !important;
+    }
+
+    &[aria-describedby] {
+        @include mq(sm) {
+            border-color: transparent;
+
+            &::before,
+            &::after {
+                position: absolute;
+                display: block; // for ie-11
+                top: 50%;
+                left: 50%;
+                width: 1.5rem;
+                height: 1px;
+                background: $color-brand;
+                transition: 0;
+                content: "";
+            }
+
+            &::before {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &::after {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+
     &::before {
         position: absolute;
         display: block; // for ie-11
@@ -35,8 +66,10 @@
     @include text-md;
 
     padding: .4rem .5rem;
-    font-weight: 700;
+    max-width: 30.4rem;
     background: rgba($color-brand, .9);
+    text-align: left;
+    font-weight: 700;
 }
 
 .tippy-popper[x-placement^='bottom'] .tippy-arrow {

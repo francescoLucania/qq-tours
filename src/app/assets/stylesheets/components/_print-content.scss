@@ -15,13 +15,24 @@
     }
 
     @page {
-        margin: 1cm;
+        size: auto;   /* auto is the initial value */
+        margin: 1cm 0;  /* this affects the margin in the printer settings */
     }
 
-    //body > *:not(main) {
-    //    display: none;
-    //}
+    body {
+        -webkit-print-color-adjust: exact !important;
+    }
 
+    a[href]:after {
+        content: none !important;
+        text-decoration: none !important;
+    }
+
+    a {
+        border-bottom: 0 !important;
+        text-decoration: none !important;
+        backface-visibility: hidden;
+    }
     section {
         page-break-before: always;
     }
@@ -32,6 +43,19 @@
     }
 }
 
+.not-print {
+    @media print {
+        display: none !important;
+    }
+}
+
+.is-print {
+    display: none;
+
+    @media print {
+        display: block !important;
+    }
+}
 
 .print-header-content {
     display: none;
@@ -60,15 +84,33 @@
     }
 
     &__image-code {
-        @include size(5rem);
+        @media print {
+            @include size(5rem);
 
-        margin-left: 1.6rem;
+            min-width: 5rem;
 
-        > img {
-            min-width: 50%;
-            height: auto;
-            display: block;
-            vertical-align: top;
+            margin-left: 1.6rem;
+
+            > img {
+                min-width: 50%;
+                height: auto;
+                display: block;
+                vertical-align: top;
+            }
         }
+    }
+}
+
+.tour-agency-title {
+    @include text-sm;
+
+    @media print {
+        position: absolute;
+        top: -.3rem;
+        left: 2rem;
+        transform: translateY(-50%);
+        font-weight: bold;
+        padding: .4rem;
+        background: #fff !important;
     }
 }
