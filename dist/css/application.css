@@ -1053,12 +1053,12 @@ a.button {
 
 .site-header__logo {
   display: block;
-  width: 8.5rem;
 }
 
 @media all and (max-width: 767px) {
   .site-header__logo {
     margin: 0 auto 2rem;
+    width: 8.5rem;
   }
 }
 
@@ -1067,6 +1067,8 @@ a.button {
     display: flex;
     align-items: center;
     height: 4rem;
+    width: auto;
+    max-width: 8.5rem;
   }
 }
 
@@ -1106,6 +1108,7 @@ a.button {
 
 @media all and (min-width: 768px) {
   .site-header__title {
+    margin-top: -.3rem;
     margin-left: 2rem;
   }
 }
@@ -1847,29 +1850,25 @@ a.button {
   }
 }
 
-.person-card {
-  display: flex;
-  align-items: flex-start;
+.promo-information > .wysiwyg + .person-card {
   margin-top: 2rem;
 }
 
 @media all and (min-width: 768px) {
-  .person-card {
+  .promo-information > .wysiwyg + .person-card {
     margin-top: 3rem;
   }
 }
 
 @media print {
-  .person-card {
+  .promo-information > .wysiwyg + .person-card {
     margin-top: 2.8rem;
-    border-top: 2px solid;
   }
 }
 
-@media all and (min-width: 980px) {
-  .person-card {
-    margin-top: 4rem;
-  }
+.person-card {
+  display: flex;
+  align-items: flex-start;
 }
 
 @media all and (min-width: 768px) {
@@ -1904,7 +1903,6 @@ a.button {
 }
 
 .person-card__name {
-  margin-left: 1.5rem;
   font-weight: 700;
 }
 
@@ -1925,7 +1923,6 @@ a.button {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin-left: 2rem;
   }
 }
 
@@ -2006,9 +2003,20 @@ a.button {
   color: #9ea0a6;
 }
 
+.person-card__heading-contact-information-item.is-md {
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+  .person-card__heading-contact-information-item.is-md {
+    display: block;
+  }
+}
+
 .person-card__photo {
   width: 3.2rem;
   height: 3.2rem;
+  margin-right: 2rem;
   min-width: 3.2rem;
 }
 
@@ -3028,6 +3036,7 @@ a.button {
 .tour-comment__photo {
   width: 3.2rem;
   height: 3.2rem;
+  margin-right: 1rem;
   max-width: 3.2rem;
 }
 
@@ -3047,7 +3056,6 @@ a.button {
   font-size: 1.3rem;
   line-height: 1.385;
   flex-grow: 1;
-  margin-left: 1rem;
   color: #9ea0a6;
 }
 
@@ -3214,8 +3222,8 @@ a.button {
   }
 }
 
-.tripadvisor > ul > li[data-value='1'] > span {
-  content: "";
+.tripadvisor > ul > li[data-value=''] > span {
+  display: none;
 }
 
 .tripadvisor > ul > li[data-value='0.5'] > span {

@@ -449,6 +449,7 @@
     &__photo {
         @include size(3.2rem);
 
+        margin-right: 1rem;
         max-width: 3.2rem;
 
         > a {
@@ -468,7 +469,6 @@
         @include text-md;
 
         flex-grow: 1;
-        margin-left: 1rem;
         color: $color-light;
 
         @include mq(md) {

@@ -17,8 +17,8 @@
     <header class="site-header" role="header">
       <div class="container">
         <div class="site-header__grid">
-          <div class="site-header__information"><a class="site-header__logo" href="#"><img src="img/logo.png" alt="Company name" title="Company name"></a>
-            <h1 class="site-header__title"><a href="#">Турагентство E-travel</a></h1>
+          <div class="site-header__information"><a class="site-header__logo" href="#"><img src="img/3_8686_logo.png" alt="Company name" title="Company name"></a>
+            <h1 class="site-header__title"><a href="#">СоюзТур</a></h1>
           </div>
           <div class="site-header__actions"><a href="tel:889206616644">
               <svg class="icon" role="img">
@@ -51,11 +51,12 @@
             <div class="person-card">
               <div class="person-card__heading-grid">
                 <div class="person-card__heading person-card__heading--mobile-options">
-                  <div class="person-card__photo"><img src="img/photo.jpg" alt="Оксана Иванова"></div>
+                  <!--.person-card__photo-->
+                  <!--    img(src='img/photo.jpg' alt='Оксана Иванова')-->
                   <div class="person-card__name"><a href="#">Оксана Иванова</a></div>
                 </div>
                 <ul class="person-card__heading-contact-information">
-                  <li class="person-card__heading-contact-information-item"><a href="#">Оксана Иванова</a></li>
+                  <li class="person-card__heading-contact-information-item is-md"><a href="#">Оксана Иванова</a></li>
                   <li class="person-card__heading-contact-information-item"><a href="#">+7 (920) 661-66-44</a></li>
                   <li class="person-card__heading-contact-information-item" data-color="minor"><a href="#">ds@qui-quo.ru</a></li>
                   <li class="person-card__heading-contact-information-item person-card__heading-contact-information-item--description">Я Ваш персональный менеджер, отвечу на любые вопросы, помогу выбрать незабываемый тур</li>
@@ -113,7 +114,7 @@
                 <div class="tour__header">
                   <div class="tour__header-col">
                     <div class="tour__header-agency-information">
-                      <div class="tour-agency-title is-print">Coral Travel</div><a class="tour__header-logo-image not-print" href="#" target="_blank"><img src="img/agency.png" alt="agency name"></a>
+                      <div class="tour-agency-title is-print">Coral Travel</div><a class="tour__header-logo-image not-print" href="#" target="_blank"><img src="img/coral-logo.jpg" alt="agency name"></a>
                       <div class="tour__header-name not-print"><a href="#" target="_blank">Начало тура: Москва</a></div>
                     </div>
                   </div>
@@ -170,7 +171,8 @@
                   </div>
                 </div>
                 <div class="tour-comment">
-                  <div class="tour-comment__photo"><a href="#"><img src="img/photo.jpg" alt="name"></a></div>
+                  <!--.tour-comment__photo-->
+                  <!--    a(href='#'): img(src='img/photo.jpg' alt='name')-->
                   <div class="tour-comment__content">
                     <p>Цена высокая, потому что вылет из Внуково, не надо будет стоять в пробке на МКАДе</p>
                   </div>
@@ -180,7 +182,9 @@
                 <div class="tour__header">
                   <div class="tour__header-col">
                     <div class="tour__header-agency-information">
-                      <div class="tour-agency-title is-print">Длинное название компании</div><a class="tour__header-logo-image not-print" href="#" target="_blank"><img src="img/agency.png" alt="agency name"></a>
+                      <div class="tour-agency-title is-print">Длинное название компании</div>
+                      <!--a.tour__header-logo-image.not-print(href='#' target='_blank')-->
+                      <!--    img(src='img/agency.png' alt='agency name')-->
                       <div class="tour__header-name not-print"><a href="#" target="_blank">Начало тура: Москва</a></div>
                     </div>
                   </div>
@@ -253,17 +257,16 @@
                 <header class="hotel-card__header">
                   <h3 class="hotel-card__title"><a href="#">Royal Beach Resort & Spa 5*&nbsp;</a></h3>
                   <div class="hotel-card__header-rating">
-                    <div class="top-hotels"><b data-rating="4.6"></b><span>TopHotels</span></div>
-                    <!---->
-                    <!--.tripadvisor-->
-                    <!--    ul-->
-                    <!--        li(data-value='1'): span-->
-                    <!--        li(data-value='1'): span-->
-                    <!--        li(data-value='1'): span-->
-                    <!--        li(data-value='1'): span-->
-                    <!--        li(data-value='0.5'): span-->
-                    <!---->
-                    <!--    span Tripadvisor-->
+                    <div class="top-hotels"><b data-rating="3.3"></b><span>TopHotels</span></div>
+                    <div class="tripadvisor">
+                      <ul>
+                        <li data-value="1"><span></span></li>
+                        <li data-value="1"><span></span></li>
+                        <li data-value="0.5"><span></span></li>
+                        <li data-value=""><span></span></li>
+                        <li data-value=""><span></span></li>
+                      </ul><span>Tripadvisor</span>
+                    </div>
                   </div>
                 </header>
                 <address>Шарджа, ОАЭ</address>
@@ -334,13 +337,13 @@
                     </div>
                   </div>
                 </div>
-                <!--40-->
-                <!--.tour-comment-->
-                <!--    .tour-comment__photo-->
-                <!--        a(href='#'): img(src='img/photo.jpg' alt='name')-->
-                <!---->
-                <!--    .tour-comment__content-->
-                <!--        p Цена высокая, потому что вылет из Внуково, не надо будет стоять в пробке на МКАДе-->
+                <div class="tour-comment">
+                  <!--.tour-comment__photo-->
+                  <!--    a(href='#'): img(src='img/photo.jpg' alt='name')-->
+                  <div class="tour-comment__content">
+                    <p>Цена высокая, потому что вылет из Внуково, не надо будет стоять в пробке на МКАДе</p>
+                  </div>
+                </div>
               </div>
               <div class="tour">
                 <div class="tour__header">
@@ -470,7 +473,7 @@
               </ul>
             </div>
           </div>
-          <div class="site-footer__logo"><a href="#"><img src="img/logo.png" alt="Company name" title="Company name"></a></div>
+          <div class="site-footer__logo"><a href="#"><img src="img/3_8686_logo.png" alt="Company name" title="Company name"></a></div>
         </div>
       </div>
     </footer>

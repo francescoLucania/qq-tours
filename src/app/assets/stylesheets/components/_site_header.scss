@@ -55,16 +55,18 @@
 
     &__logo {
         display: block;
-        width: 8.5rem;
 
         @include mq(sm) {
             margin: 0 auto map_get($mq-container-indents, 'md');
+            width: 8.5rem;
         }
 
         @include mq(md) {
             display: flex;
             align-items: center;
             height: 4rem;
+            width: auto;
+            max-width: 8.5rem;
         }
 
         @media print {
@@ -96,7 +98,8 @@
         }
 
         @include mq(md) {
-            margin-left: map_get($mq-container-indents, 'md')
+            margin-top: -.3rem;
+            margin-left: map_get($mq-container-indents, 'md');
         }
 
         @media print {
