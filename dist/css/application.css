@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,500,600,700&subset=cyrillic-ext");
 *,
 *::before,
 *::after {
@@ -2089,6 +2089,8 @@ a.button {
 @media all and (min-width: 768px) {
   .hotel-card__photo {
     margin-right: 1.6rem;
+    min-width: 21rem;
+    max-width: 21rem;
   }
 }
 
@@ -2128,6 +2130,12 @@ a.button {
 .hotel-card__information .hotel-card__content p:not(:last-child),
 .hotel-card__information > address:not(:last-child) {
   margin-bottom: .4rem;
+}
+
+@media all and (min-width: 768px) {
+  .hotel-card__information {
+    flex-grow: 1;
+  }
 }
 
 .hotel-card .hotel-card__content-hide {
@@ -2293,6 +2301,10 @@ a.button {
 
 .tours {
   margin-top: .8rem;
+}
+
+.tours:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .tours > .tour:not(:first-child) {
@@ -2966,6 +2978,7 @@ a.button {
 .tour__price {
   font-size: 1.8rem;
   line-height: 1;
+  font-weight: 600;
 }
 
 .tour__old-price {

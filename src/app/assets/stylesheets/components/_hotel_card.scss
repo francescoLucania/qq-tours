@@ -44,6 +44,8 @@
 
         @include mq(md) {
             margin-right: 1.6rem;
+            min-width: 21rem;
+            max-width: 21rem;
         }
 
         @media print {
@@ -73,6 +75,10 @@
             &:not(:last-child) {
                 margin-bottom: .4rem;
             }
+        }
+
+        @include mq(md) {
+            flex-grow: 1;
         }
     }
 
@@ -134,7 +140,6 @@
         @media print {
             order: 2
         }
-
 
         > div {
             &:not(:last-child) {

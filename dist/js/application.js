@@ -256,3 +256,13 @@ tippy.setDefaults({
     arrow: true,
     placement: 'bottom'
 });
+'use strict';
+
+$(document).on('click', '.js-read-more', function () {
+
+    var $this = $(this);
+
+    var $thisHideContent = $this.closest('.js-hotel-description').find('.js-hide-content');
+
+    $thisHideContent.css('display', 'block');
+});

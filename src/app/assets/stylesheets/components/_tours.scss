@@ -3,6 +3,10 @@
 .tours {
     margin-top: .8rem;
 
+    &:not(:last-child) {
+        margin-bottom: map_get($mq-container-indents, 'md')
+    }
+
     > .tour {
         &:not(:first-child) {
             margin-top: .5rem;
@@ -404,6 +408,8 @@
 
     &__price {
         @include font(1.8rem, 1.8rem);
+
+        font-weight: 600;
     }
 
     &__old-price {
