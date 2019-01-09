@@ -694,6 +694,12 @@ a.button {
   }
 }
 
+@media print {
+  .container {
+    min-width: 860px;
+  }
+}
+
 @font-face {
   src: url("../fonts/rub/arial/alsrubl-arial-regular.woff") format("woff");
   font-family: ALSRubl-Arial;
@@ -1066,9 +1072,8 @@ a.button {
   .site-header__logo {
     display: flex;
     align-items: center;
-    height: 4rem;
+    height: 8rem;
     width: auto;
-    max-width: 8.5rem;
   }
 }
 
@@ -1247,7 +1252,7 @@ a.button {
   color: #ff0000;
 }
 
-.site-footer__massage::before {
+.site-footer__message-price {
   position: absolute;
   top: -1.8rem;
   left: 50%;
@@ -1256,10 +1261,9 @@ a.button {
           transform: translate(-50%, -100%);
   text-align: center;
   color: #9ea0a6;
-  content: attr(data-price-information);
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 980px) {
   .site-footer__grid {
     display: flex;
     justify-content: space-between;
@@ -1268,21 +1272,21 @@ a.button {
   }
 }
 
-@media all and (min-width: 768px) and (max-width: 767px) {
+@media all and (min-width: 980px) and (max-width: 767px) {
   .site-footer__grid {
     margin-right: -1rem;
     margin-left: -1rem;
   }
 }
 
-@media all and (min-width: 768px) and (min-width: 768px) {
+@media all and (min-width: 980px) and (min-width: 768px) {
   .site-footer__grid {
     margin-right: -1rem;
     margin-left: -1rem;
   }
 }
 
-@media all and (min-width: 768px) and (min-width: 980px) {
+@media all and (min-width: 980px) and (min-width: 980px) {
   .site-footer__grid {
     margin-right: -1rem;
     margin-left: -1rem;
@@ -1297,34 +1301,6 @@ a.button {
     flex-flow: row wrap;
     padding-top: 1.9rem;
     border-top: 1px solid #000;
-  }
-}
-
-@media all and (min-width: 768px) {
-  .site-footer__navigate {
-    flex: 0 0 66.667%;
-    max-width: 66.667%;
-  }
-}
-
-@media all and (min-width: 768px) and (max-width: 767px) {
-  .site-footer__navigate {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-}
-
-@media all and (min-width: 768px) and (min-width: 768px) {
-  .site-footer__navigate {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-}
-
-@media all and (min-width: 768px) and (min-width: 980px) {
-  .site-footer__navigate {
-    padding-right: 1rem;
-    padding-left: 1rem;
   }
 }
 
@@ -1398,8 +1374,8 @@ a.button {
 
 @media all and (min-width: 768px) {
   .site-footer__navigate-grid > ul {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 25%;
+    max-width: 25%;
   }
 }
 
@@ -1459,6 +1435,12 @@ a.button {
   }
 }
 
+@media all and (min-width: 768px) {
+  .site-footer__navigate-grid > ul:nth-child(4) {
+    margin-left: auto;
+  }
+}
+
 .site-footer__navigate-grid > ul > li {
   font-size: 1.1rem;
   line-height: 1.364;
@@ -1512,29 +1494,25 @@ a.button {
 }
 
 .site-footer__logo > a {
+  display: block;
+  margin: 4rem auto 0;
   width: 6rem;
 }
 
-@media all and (max-width: 767px) {
-  .site-footer__logo > a {
-    margin: 4rem auto 0;
-  }
-}
-
-@media all and (min-width: 768px) {
+@media all and (min-width: 980px) {
   .site-footer__logo > a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 4rem;
-    max-width: 8.5rem;
+    margin-top: 0;
+    height: 8rem;
   }
 }
 
 @media print {
   .site-footer__logo > a {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     height: 4rem;
   }
 }
@@ -1704,6 +1682,10 @@ a.button {
   margin: 1rem 0;
 }
 
+.section:last-child {
+  margin-bottom: 0;
+}
+
 @media print {
   *, *:before,
   *:after,
@@ -1768,7 +1750,7 @@ a.button {
 @media print {
   .print-header-content {
     display: block;
-    margin: 2rem;
+    margin: 2rem 0;
   }
 }
 
@@ -1845,6 +1827,10 @@ a.button {
 
 @media print {
   .promo-information {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
     border: 0;
     box-shadow: none;
   }
@@ -1862,7 +1848,9 @@ a.button {
 
 @media print {
   .promo-information > .wysiwyg + .person-card {
-    margin-top: 2.8rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid #000;
   }
 }
 
@@ -1978,6 +1966,9 @@ a.button {
 }
 
 @media print {
+  .person-card__heading-contact-information-item:not(.person-card__heading-contact-information-item--description):not(:first-child) {
+    margin-left: 2rem;
+  }
   .person-card__heading-contact-information-item:not(.person-card__heading-contact-information-item--description) {
     padding-bottom: 0;
     border: 0;
@@ -2008,6 +1999,12 @@ a.button {
 }
 
 @media all and (min-width: 768px) {
+  .person-card__heading-contact-information-item.is-md {
+    display: block;
+  }
+}
+
+@media print {
   .person-card__heading-contact-information-item.is-md {
     display: block;
   }
@@ -2047,7 +2044,6 @@ a.button {
 
 @media print {
   .hotel-box {
-    margin: 0 -1rem;
     padding: 1rem;
     border-radius: 1rem;
     border: 2px solid #000;
@@ -2078,6 +2074,8 @@ a.button {
 
 @media print {
   .hotel-card {
+    margin-left: 0;
+    margin-right: 0;
     padding-top: 0;
     border: 0;
   }
@@ -2150,6 +2148,12 @@ a.button {
   display: none;
 }
 
+@media print {
+  .hotel-card .hotel-card__content-hide {
+    display: block;
+  }
+}
+
 .hotel-card .hotel-card__open-hide-content {
   font-size: 1.3rem;
   line-height: 1.385;
@@ -2167,37 +2171,45 @@ a.button {
   text-decoration: underline;
 }
 
-.hotel-card__header {
-  display: flex;
-  margin-bottom: .4rem;
-}
-
-@media all and (max-width: 767px) {
-  .hotel-card__header {
-    flex-direction: column;
+@media print {
+  .hotel-card .hotel-card__open-hide-content {
+    display: none;
   }
 }
 
-@media all and (min-width: 768px) {
+.hotel-card__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .4rem;
+}
+
+@media all and (min-width: 980px) {
   .hotel-card__header {
+    flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
   }
 }
 
 @media print {
   .hotel-card__header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .4rem;
   }
 }
 
 .hotel-card__header > h3 {
-  max-width: 50%;
+  order: 2;
 }
 
-@media all and (max-width: 767px) {
+@media all and (min-width: 980px) {
+  .hotel-card__header > h3 {
+    order: 1;
+    max-width: 50%;
+  }
+}
+
+@media print {
   .hotel-card__header > h3 {
     order: 2;
   }
@@ -2205,24 +2217,22 @@ a.button {
 
 .hotel-card__header-rating {
   display: flex;
+  order: 1;
+  margin-bottom: 1.6rem;
 }
 
-@media all and (max-width: 767px) {
+@media all and (min-width: 980px) {
   .hotel-card__header-rating {
-    order: 1;
-    margin-bottom: 1.6rem;
-  }
-}
-
-@media all and (min-width: 768px) {
-  .hotel-card__header-rating {
-    justify-content: space-between;
+    order: 2;
+    margin-bottom: 0;
   }
 }
 
 @media print {
   .hotel-card__header-rating {
-    order: 2;
+    display: flex;
+    order: 1;
+    margin-bottom: 1.6rem;
   }
 }
 
@@ -2254,6 +2264,12 @@ a.button {
   background-size: contain;
   background-image: url(../img/icons/cursor.png);
   background-repeat: no-repeat;
+}
+
+@media print {
+  .hotel-card__visits-link {
+    display: none;
+  }
 }
 
 .hotel-card__title {
@@ -2315,6 +2331,24 @@ a.button {
   margin-bottom: 2rem;
 }
 
+@media print {
+  .tours {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .tours > .tour {
+    min-height: 127px;
+  }
+}
+
+@media all and (min-width: 980px) {
+  .tours > .tour {
+    min-height: auto;
+  }
+}
+
 .tours > .tour:not(:first-child) {
   margin-top: .5rem;
 }
@@ -2326,11 +2360,9 @@ a.button {
     border-bottom: 0;
   }
   .tours > .tour:not(:first-child) {
-    border-top: 0;
-    margin-top: 0;
-  }
-  .tours > .tour:not(:last-child) {
-    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+    margin-top: 2rem !important;
+    padding-bottom: 2rem;
   }
 }
 
@@ -2449,6 +2481,7 @@ a.button {
     justify-content: flex-start;
     align-items: flex-start;
     flex-flow: row wrap;
+    position: relative;
     flex-wrap: wrap;
   }
 }
@@ -2480,6 +2513,7 @@ a.button {
     justify-content: space-beetween;
     align-items: flex-start;
     flex-flow: row wrap;
+    position: static !important;
   }
 }
 
@@ -2504,56 +2538,56 @@ a.button {
 }
 
 @media all and (min-width: 768px) {
-  .tour__fb-col, .tour__date-information-col {
+  .tour__date-information-col {
     flex: 0 0 33.333%;
     max-width: 33.333%;
   }
 }
 
 @media all and (min-width: 768px) and (max-width: 767px) {
-  .tour__fb-col, .tour__date-information-col {
+  .tour__date-information-col {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 }
 
 @media all and (min-width: 768px) and (min-width: 768px) {
-  .tour__fb-col, .tour__date-information-col {
+  .tour__date-information-col {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 }
 
 @media all and (min-width: 768px) and (min-width: 980px) {
-  .tour__fb-col, .tour__date-information-col {
+  .tour__date-information-col {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 }
 
 @media all and (min-width: 980px) {
-  .tour__fb-col, .tour__date-information-col {
-    flex: 0 0 20.833%;
-    max-width: 20.833%;
+  .tour__date-information-col {
+    flex: 0 0 18.333%;
+    max-width: 18.333%;
   }
 }
 
 @media all and (min-width: 980px) and (max-width: 767px) {
-  .tour__fb-col, .tour__date-information-col {
+  .tour__date-information-col {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 }
 
 @media all and (min-width: 980px) and (min-width: 768px) {
-  .tour__fb-col, .tour__date-information-col {
+  .tour__date-information-col {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 }
 
 @media all and (min-width: 980px) and (min-width: 980px) {
-  .tour__fb-col, .tour__date-information-col {
+  .tour__date-information-col {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -2561,12 +2595,70 @@ a.button {
 
 @media print {
   .tour__date-information-col {
-    width: 30%;
+    width: 40%;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .tour__fb-col {
+    flex: 0 0 41.667%;
+    max-width: 41.667%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 767px) {
+  .tour__fb-col {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 768px) and (min-width: 768px) {
+  .tour__fb-col {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 768px) and (min-width: 980px) {
+  .tour__fb-col {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 980px) {
+  .tour__fb-col {
+    flex: 0 0 20.833%;
+    max-width: 20.833%;
+  }
+}
+
+@media all and (min-width: 980px) and (max-width: 767px) {
+  .tour__fb-col {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 980px) and (min-width: 768px) {
+  .tour__fb-col {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 980px) and (min-width: 980px) {
+  .tour__fb-col {
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 
 @media print {
   .tour__fb-col {
+    flex: 0 0 31.667%;
+    max-width: 31.667%;
     width: 40%;
     margin-right: 4rem;
   }
@@ -2609,8 +2701,8 @@ a.button {
 
 @media all and (min-width: 980px) {
   .tour__price-and-tags-col {
-    flex: 0 0 36.667%;
-    max-width: 36.667%;
+    flex: 0 0 35%;
+    max-width: 35%;
   }
 }
 
@@ -2637,6 +2729,7 @@ a.button {
 
 @media print {
   .tour__price-and-tags-col {
+    display: none;
     margin-left: auto;
   }
 }
@@ -2649,6 +2742,9 @@ a.button {
 
 @media all and (min-width: 768px) {
   .tour__price-and-tags-grid {
+    position: absolute;
+    top: 0;
+    right: calc(1rem - 1px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -2658,6 +2754,9 @@ a.button {
 
 @media all and (min-width: 980px) {
   .tour__price-and-tags-grid {
+    position: relative;
+    top: 0;
+    right: 0;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
@@ -2681,21 +2780,6 @@ a.button {
     display: flex;
     justify-content: center;
     margin-bottom: .8rem;
-  }
-}
-
-@media print {
-  .tour__price-and-tags-grid > .tag-grid {
-    position: absolute;
-    top: 0;
-    right: 4rem;
-    display: flex;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    padding: .8rem;
-    z-index: 99;
-    justify-content: flex-end;
-    background: #fff !important;
   }
 }
 
@@ -2729,8 +2813,8 @@ a.button {
 
 @media all and (min-width: 980px) {
   .tour__flight-information-col {
-    flex: 0 0 20.833%;
-    max-width: 20.833%;
+    flex: 0 0 25%;
+    max-width: 25%;
   }
 }
 
@@ -2757,7 +2841,8 @@ a.button {
 
 @media print {
   .tour__flight-information-col {
-    display: none !important;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
@@ -2767,7 +2852,7 @@ a.button {
     justify-content: flex-start;
     align-items: flex-start;
     flex-flow: row wrap;
-    margin-top: .8rem;
+    margin-top: 1.7rem;
   }
 }
 
@@ -2794,8 +2879,8 @@ a.button {
 
 @media all and (min-width: 980px) {
   .tour__flight-information-box {
-    display: block;
-    margin-top: 0;
+    display: flex;
+    margin: 0;
   }
 }
 
@@ -2915,6 +3000,7 @@ a.button {
 
 @media print {
   .tour__fb-col .tour__col-title {
+    padding: 0 calc(1rem - 1px);
     border: 0 !important;
   }
 }
@@ -2930,6 +3016,45 @@ a.button {
     visibility: hidden;
     opacity: 0;
   }
+}
+
+@media all and (min-width: 980px) {
+  .tour__col-title[data-fli] {
+    position: relative;
+    padding-left: 2.4rem;
+  }
+}
+
+.tour__col-title[data-fli] > i {
+  width: 1.6rem;
+  height: 1.1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media all and (min-width: 980px) {
+  .tour__col-title[data-fli] > i {
+    display: inline-block;
+  }
+}
+
+.tour__col-title[data-fli="go"] > i {
+  width: 1.6rem;
+  height: 1.1rem;
+  top: 2px;
+  background-image: url("../img/icons/plan.png");
+}
+
+.tour__col-title[data-fli="back"] > i {
+  width: 1.8rem;
+  height: 0.9rem;
+  top: 5px;
+  background-image: url("../img/icons/plan-d.png");
 }
 
 .tour__col-description {
@@ -2964,6 +3089,7 @@ a.button {
 
 @media all and (min-width: 768px) {
   .tour__price-box {
+    flex-direction: row-reverse;
     justify-content: flex-end;
   }
 }
@@ -2973,13 +3099,6 @@ a.button {
     display: block;
     margin-right: 1.6rem;
     margin-bottom: 0;
-  }
-}
-
-@media print {
-  .tour__price-box {
-    display: flex;
-    justify-content: flex-end;
   }
 }
 
@@ -3009,6 +3128,25 @@ a.button {
   }
 }
 
+@media all and (min-width: 768px) {
+  .tour__old-price {
+    margin-right: .8rem;
+  }
+}
+
+@media all and (min-width: 980px) {
+  .tour__old-price {
+    margin-right: 0;
+  }
+}
+
+@media print {
+  .tour__old-price {
+    margin-right: .8rem;
+    font-weight: 400 !important;
+  }
+}
+
 .tour__price, .tour__old-price {
   text-align: right;
 }
@@ -3025,6 +3163,41 @@ a.button {
   }
 }
 
+.tour__print-content {
+  display: none !important;
+}
+
+@media print {
+  .tour__print-content {
+    display: block !important;
+  }
+}
+
+@media print {
+  .tour__print-content > .tag-grid {
+    position: absolute;
+    top: 0;
+    right: 4rem;
+    display: flex;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    padding: 0 .8rem;
+    z-index: 99;
+    justify-content: flex-end;
+    background: #fff !important;
+  }
+}
+
+@media print {
+  .tour__print-content > .tour__price-box {
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
 .tour-comment {
   display: flex;
 }
@@ -3038,6 +3211,8 @@ a.button {
   height: 3.2rem;
   margin-right: 1rem;
   max-width: 3.2rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
 }
 
 .tour-comment__photo > a {
@@ -3050,6 +3225,12 @@ a.button {
   width: 100%;
   height: auto;
   vertical-align: top;
+}
+
+@media print {
+  .tour-comment__photo {
+    display: block;
+  }
 }
 
 .tour-comment__content {
@@ -3196,6 +3377,22 @@ a.button {
   color: #000;
 }
 
+@media print {
+  .top-hotels > span {
+    font-size: 1.3rem;
+    line-height: 1.385;
+    position: relative;
+    top: -1px;
+  }
+}
+
+@media print {
+  .top-hotels > span {
+    font-size: 1.4rem;
+    line-height: 1.429;
+  }
+}
+
 .tripadvisor {
   display: flex;
   align-items: center;
@@ -3206,6 +3403,15 @@ a.button {
   align-items: center;
   margin-right: .8rem;
   list-style-type: none;
+}
+
+@media print {
+  .tripadvisor > ul {
+    display: flex;
+    align-items: center;
+    margin-right: .8rem;
+    list-style-type: none;
+  }
 }
 
 .tripadvisor > ul > li {
@@ -3266,4 +3472,20 @@ a.button {
   line-height: 1.364;
   top: .1rem;
   color: #39ba9d;
+}
+
+@media print {
+  .tripadvisor > span {
+    font-size: 1.3rem;
+    line-height: 1.385;
+    position: relative;
+    top: -1px;
+  }
+}
+
+@media print {
+  .tripadvisor > span {
+    font-size: 1.4rem;
+    line-height: 1.429;
+  }
 }

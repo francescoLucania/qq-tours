@@ -6,4 +6,5 @@ $(document).on('click', '.js-read-more', function () {
 
     $thisHideContent.css('display', 'block');
 
+    return false
 });

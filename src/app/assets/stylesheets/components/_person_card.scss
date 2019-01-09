@@ -103,6 +103,12 @@
 
         @media print {
             &:not(.person-card__heading-contact-information-item--description) {
+                &:not(:first-child) {
+                    margin-left: map_get($mq-container-indents, 'md');
+                }
+            }
+
+            &:not(.person-card__heading-contact-information-item--description) {
                 padding-bottom: 0;
                 border: 0;
             }
@@ -124,6 +130,10 @@
             display: none;
 
             @include mq(md) {
+                display: block;
+            }
+
+            @media print {
                 display: block;
             }
         }

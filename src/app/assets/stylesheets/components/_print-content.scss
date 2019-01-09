@@ -62,7 +62,7 @@
 
     @media print {
         display: block;
-        margin: map_get($mq-container-indents, 'md');
+        margin: map_get($mq-container-indents, 'md') 0;
     }
 
     &__grid {

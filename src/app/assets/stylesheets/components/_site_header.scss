@@ -64,9 +64,9 @@
         @include mq(md) {
             display: flex;
             align-items: center;
-            height: 4rem;
+            height: 8rem;
             width: auto;
-            max-width: 8.5rem;
+            //max-width: 8.5rem;
         }
 
         @media print {

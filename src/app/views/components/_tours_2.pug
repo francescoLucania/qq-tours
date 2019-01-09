@@ -1,4 +1,5 @@
 .tours
+
     .tour
         .tour__header
             .tour__header-col
@@ -12,7 +13,7 @@
                         a(href='#' target='_blank') Начало тура: Москва
 
             .tour__header-col
-                ul.tag-grid
+                ul.tag-grid.not-print
                     li.tag(data-background-color="red" data-text-transform="uppercase" data-font-style="bold") Рекомендую
                     li.tag(data-background-color="yellow" data-text-transform="uppercase" data-font-style="bold") Промо цена
 
@@ -33,7 +34,7 @@
 
                     button.button-tooltip.js-button-tooltip(data-tippy="I'm a tooltip!" )
                 h4.tour__col-title
-                    span.is-print <b>Проживание</b> 2Adl+1Chd 2-3, 12+, 12+ — Deluxe Lagoon View
+                    span.is-print <b>Проживание:</b> 2Adl+1Chd 2-3, 12+, 12+ — Deluxe Lagoon View
                     a.not-print(href='#') 2Adl+1Chd 2-3, 12+, 12+
                     button.button-tooltip.js-button-tooltip(data-tippy="I'm a tooltip!" )
 
@@ -42,43 +43,60 @@
                 .tour__flight-information-box
 
                     .tour__flight-information-item
-                        h4.tour__col-title
+                        h4.tour__col-title.not-print(data-fli='go')
+                            i
                             a(href='#') 14.07 23:05
                             .tour__col-description Домодедово
                             button.button-tooltip.js-button-tooltip(data-tippy="Бизнес класс по запросу Бизнес класс по запросуБизнес класс по запросуБизнес класс по запросу" )
 
+                        .is-print
+                            b Туда:&nbsp;
+                            | 14.07 23:05 Домодедово (DME) - 15.07 03:00 Ираклион (HER), Aegan
+
                     .tour__flight-information-item
-                        h4.tour__col-title
+                        h4.tour__col-title.not-print(data-fli='back')
+                            i
                             a(href='#') 28.07 13:05
                             .tour__col-description Ханья (HNY)
                             button.button-tooltip.js-button-tooltip(data-tippy="Бизнес класс по запросу Бизнес класс по запросуБизнес класс по запросуБизнес класс по запросу")
 
+                        .is-print
+                            b Обратно:&nbsp;
+                            | 28.07 13:05 Ханья (HNY) - 28.07 18:00 Шереметьево (SVO), Aegan, Premium Economy
 
             .tour__price-and-tags-col
                 .tour__price-and-tags-grid
                     ul.tag-grid
-                        li.tag(data-background-color="red" data-text-transform="uppercase" data-font-style="bold") Рекомендую
+                        li.tag(data-background-color="red" data-text-transform="uppercase" data-font-style="bold") Рекомендую 22
                         li.tag(data-background-color="yellow" data-text-transform="uppercase" data-font-style="bold") Промо цена
 
                     .tour__price-box
-                        .tour__price 40 400 RUB
-                        .tour__old-price 45 090 RUB
+                        .tour__price 100 400 RUB
+                        .tour__old-price 160 090 RUB
 
                     a.button(href='#') Хочу купить этот тур
 
         .tour-comment
-            //.tour-comment__photo
-            //    a(href='#'): img(src='img/photo.jpg' alt='name')
+            .tour-comment__photo
+                a(href='#'): img(src='img/photo.jpg' alt='name')
 
             .tour-comment__content
                 p Цена высокая, потому что вылет из Внуково, не надо будет стоять в пробке на МКАДе
 
+        .tour__print-content
+            ul.tag-grid
+                li.tag(data-background-color="red" data-text-transform="uppercase" data-font-style="bold") Рекомендую 22
+                li.tag(data-background-color="yellow" data-text-transform="uppercase" data-font-style="bold") Промо цена
+
+            .tour__price-box
+                .tour__price 100 400 RUB
+                .tour__old-price 160 090 RUB
 
     .tour
         .tour__header
             .tour__header-col
                 .tour__header-agency-information
-                    .tour-agency-title.is-print Длинное название компании
+                    .tour-agency-title.is-print Coral Travel
 
                     a.tour__header-logo-image.not-print(href='#' target='_blank')
                         img(src='img/agency.png' alt='agency name')
@@ -87,7 +105,8 @@
                         a(href='#' target='_blank') Начало тура: Москва
 
             .tour__header-col
-                ul.tag-grid
+                ul.tag-grid.not-print
+                    //li.tag(data-background-color="red" data-text-transform="uppercase" data-font-style="bold") Рекомендую
                     li.tag(data-background-color="yellow" data-text-transform="uppercase" data-font-style="bold") Промо цена
 
         .tour__container
@@ -107,70 +126,60 @@
 
                     button.button-tooltip.js-button-tooltip(data-tippy="I'm a tooltip!" )
                 h4.tour__col-title
-                    span.is-print <b>Проживание</b> 2Adl+1Chd 2-3
+                    span.is-print <b>Проживание:</b> 2Adl+1Chd 2-3, 12+, 12+ — Deluxe Lagoon View
                     a.not-print(href='#') 2Adl+1Chd 2-3, 12+, 12+
                     button.button-tooltip.js-button-tooltip(data-tippy="I'm a tooltip!" )
 
 
             .tour__flight-information-col
-                .tour__flight-information-box
+                //.tour__flight-information-box
+                //
+                //    .tour__flight-information-item
+                //        h4.tour__col-title.not-print(data-fli='go')
+                //            i
+                //            a(href='#') 14.07 23:05
+                //            .tour__col-description Домодедово
+                //            button.button-tooltip.js-button-tooltip(data-tippy="Бизнес класс по запросу Бизнес класс по запросуБизнес класс по запросуБизнес класс по запросу" )
+                //
+                //        .is-print
+                //            b Туда:&nbsp;
+                //            | 14.07 23:05 Домодедово (DME) - 15.07 03:00 Ираклион (HER), Aegan
+                //
+                //    .tour__flight-information-item
+                //        h4.tour__col-title.not-print(data-fli='back')
+                //            i
+                //            a(href='#') 28.07 13:05
+                //            .tour__col-description Ханья (HNY)
+                //            button.button-tooltip.js-button-tooltip(data-tippy="Бизнес класс по запросу Бизнес класс по запросуБизнес класс по запросуБизнес класс по запросу")
+                //
+                //        .is-print
+                //            b Обратно:&nbsp;
+                //            | 28.07 13:05 Ханья (HNY) - 28.07 18:00 Шереметьево (SVO), Aegan, Premium Economy
 
             .tour__price-and-tags-col
                 .tour__price-and-tags-grid
                     ul.tag-grid
+                        //li.tag(data-background-color="red" data-text-transform="uppercase" data-font-style="bold") Рекомендую
+                        li.tag(data-background-color="yellow" data-text-transform="uppercase" data-font-style="bold") Промо цена
+
                     .tour__price-box
-                        .tour__price 35 400 RUB
-                        .tour__old-price 40 090 RUB
+                        .tour__price 100 400 RUB
+                        .tour__old-price 160 090 RUB
 
                     a.button(href='#') Хочу купить этот тур
 
+        //.tour-comment
+        //    .tour-comment__photo
+        //        a(href='#'): img(src='img/photo.jpg' alt='name')
+        //
+        //    .tour-comment__content
+        //        p Цена высокая, потому что вылет из Внуково, не надо будет стоять в пробке на МКАДе
 
-    .tour
-        .tour__header
-            .tour__header-col
-                .tour__header-agency-information
-                    .tour-agency-title.is-print Длинное название компании
+        .tour__print-content
+            ul.tag-grid
+                //li.tag(data-background-color="red" data-text-transform="uppercase" data-font-style="bold") Рекомендую 22
+                li.tag(data-background-color="yellow" data-text-transform="uppercase" data-font-style="bold") Промо цена
 
-                    a.tour__header-logo-image.not-print(href='#' target='_blank')
-                        img(src='img/agency.png' alt='agency name')
-
-                    .tour__header-name.not-print
-                        a(href='#' target='_blank') Начало тура: Москва
-
-            .tour__header-col
-                ul.tag-grid
-                    li.tag(data-background-color="yellow" data-text-transform="uppercase" data-font-style="bold") Промо цена
-
-        .tour__container
-            .tour__date-information-col
-                h4.tour__col-title
-                    .is-print <b>18+1</b> ночей
-                    .is-print Начало тура: Москва
-                    .is-print <b>27 июля</b> (вс) - <b>08 авг</b> (чт)
-                    span.not-print(href='#') 18+1 ночей
-
-                .tour__col-description 27 июля (вс) - 08 авг (чт)
-
-            .tour__fb-col
-                h4.tour__col-title
-                    span.is-print <b>Питание:</b>  FB, Полный пансион (завтрак, обед, ужин) 2Adl+1Chd 2-3, 12+, 12+
-                    a.not-print(href='#') FB
-
-                    button.button-tooltip.js-button-tooltip(data-tippy="I'm a tooltip!" )
-                h4.tour__col-title
-                    span.is-print <b>Проживание</b> 2Adl+1Chd 2-3
-                    a.not-print(href='#') 2Adl+1Chd 2-3, 12+, 12+
-                    button.button-tooltip.js-button-tooltip(data-tippy="I'm a tooltip!" )
-
-
-            .tour__flight-information-col
-                .tour__flight-information-box
-
-            .tour__price-and-tags-col
-                .tour__price-and-tags-grid
-                    ul.tag-grid
-                    .tour__price-box
-                        .tour__price 35 400 RUB
-                        .tour__old-price 40 090 RUB
-
-                    a.button(href='#') Хочу купить этот тур
+            .tour__price-box
+                .tour__price 100 400 RUB
+                .tour__old-price 160 090 RUB

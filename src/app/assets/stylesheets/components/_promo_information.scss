@@ -17,6 +17,10 @@
     }
 
     @media print {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
         border: 0;
         box-shadow: none;
     }
@@ -30,7 +34,9 @@
             }
 
             @media print {
-                margin-top: 2.8rem;
+                margin-top: 2rem;
+                padding-top: 1rem;
+                border-top: 2px solid #000;
             }
         }
     }

@@ -4,10 +4,22 @@
     margin-top: .8rem;
 
     &:not(:last-child) {
-        margin-bottom: map_get($mq-container-indents, 'md')
+        margin-bottom: map_get($mq-container-indents, 'md');
+    }
+
+    @media print {
+        margin-bottom: map_get($mq-container-indents, 'md') !important;
     }
 
     > .tour {
+        @include mq(md) {
+            min-height: 127px; // magic number for full compliance with the design
+        }
+
+        @include mq(lg) {
+            min-height: auto;
+        }
+
         &:not(:first-child) {
             margin-top: .5rem;
         }
@@ -18,13 +30,14 @@
             border-bottom: 0;
 
             &:not(:first-child) {
-                border-top: 0;
-                margin-top: 0;
+                border-top: 2px solid #000;
+                margin-top: 2rem !important;
+                padding-bottom: 2rem;
             }
 
-            &:not(:last-child) {
-                border-bottom: 2px solid #000;
-            }
+            //&:not(:last-child) {
+            //    border-bottom: 2px solid #000;
+            //}
         }
     }
 
@@ -127,11 +140,14 @@
         @include mq(md) {
             @include grid(x,flex-start,flex-start);
 
+            position: relative;
             flex-wrap: wrap;
         }
 
         @media print {
             @include grid(x,space-beetween,flex-start);
+
+            position: static !important;
         }
     }
 
@@ -155,25 +171,32 @@
         }
     }
 
-    &__fb-col,
     &__date-information-col {
         @include mq(md) {
             @include grid-col(2/6);
         }
 
         @include mq(lg) {
-            @include grid-col(2.5/12);
+            @include grid-col(2.2/12);
         }
-    }
 
-    &__date-information-col {
         @media print  {
-            width: 30%;
+            width: 40%;
         }
     }
 
     &__fb-col {
+        @include mq(md) {
+            @include grid-col(2.5/6);
+        }
+
+        @include mq(lg) {
+            @include grid-col(2.5/12);
+        }
+
         @media print  {
+            @include grid-col(3.8/12);
+
             width: 40%;
             margin-right: 4rem;
         }
@@ -186,14 +209,16 @@
 
         @include mq(md) {
             @include grid-col(2/6);
+
             margin-left: auto;
         }
 
         @include mq(lg) {
-            @include grid-col(4.4/12);
+            @include grid-col(4.2/12);
         }
 
         @media print {
+            display: none;
             margin-left: auto;
         }
     }
@@ -204,6 +229,9 @@
         }
 
         @include mq(md) {
+            position: absolute;
+            top: 0;
+            right: calc(1rem - 1px);
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -211,6 +239,9 @@
         }
 
         @include mq(lg) {
+            position: relative;
+            top: 0;
+            right: 0;
             flex-direction: row;
             justify-content: flex-end;
             align-items: center;
@@ -230,18 +261,6 @@
                 justify-content: center;
                 margin-bottom: .8rem;
             }
-
-            @media print {
-                position: absolute;
-                top: 0;
-                right: 4rem;
-                display: flex;
-                transform: translateY(-50%);
-                padding: .8rem;
-                z-index: 99;
-                justify-content: flex-end;
-                background: #fff !important;
-            }
         }
     }
 
@@ -251,11 +270,11 @@
         }
 
         @include mq(lg) {
-            @include grid-col(2.5/12);
+            @include grid-col(3/12);
         }
 
         @media print {
-            display: none !important;
+            @include grid-col(12/12);
         }
     }
 
@@ -263,12 +282,13 @@
         @include mq(md) {
             @include grid;
 
-            margin-top: .8rem;
+            margin-top: 1.7rem;
         }
 
         @include mq(lg) {
-            display: block;
-            margin-top: 0;
+            display: flex;
+            margin: 0;
+            //margin-top: 0;
         }
 
         @media print {
@@ -353,6 +373,7 @@
             }
 
             @media print {
+                padding: 0 calc(1rem - 1px);
                 border: 0 !important;
             }
         }
@@ -368,6 +389,50 @@
                 opacity: 0;
             }
         }
+
+        &[data-fli] {
+            @include mq(lg) {
+                position: relative;
+                padding-left: 2.4rem;
+            }
+
+            > i {
+                @include size(1.6rem, 1.1rem);
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none;
+                background: {
+                    position: 50%;
+                    size: contain;
+                    repeat: no-repeat;
+                };
+
+                @include mq(lg) {
+                    display: inline-block;
+                }
+            }
+        }
+
+        &[data-fli="go"] {
+            > i {
+                @include size(1.6rem, 1.1rem);
+
+                top: 2px;
+                background-image: url("../img/icons/plan.png");
+            }
+        }
+
+        &[data-fli="back"] {
+            > i {
+                @include size(1.8rem, .9rem);
+
+                top: 5px;
+                background-image: url("../img/icons/plan-d.png");
+            }
+        }
+
     }
 
     &__col-description {
@@ -391,6 +456,7 @@
         }
 
         @include mq(md) {
+            flex-direction: row-reverse;
             justify-content: flex-end;
         }
 
@@ -398,11 +464,6 @@
             display: block;
             margin-right: 1.6rem;
             margin-bottom: 0;
-        }
-
-        @media print {
-            display: flex;
-            justify-content: flex-end;
         }
     }
 
@@ -421,6 +482,19 @@
         @include mq(sm) {
             margin-right: .8rem;
         }
+
+        @include mq(md) {
+            margin-right: .8rem;
+        }
+
+        @include mq(lg) {
+            margin-right: 0;
+        }
+
+        @media print {
+            margin-right: .8rem;
+            font-weight: 400 !important;
+        }
     }
 
     &__price,
@@ -437,6 +511,38 @@
             font-weight: 700;
         }
     }
+
+    &__print-content {
+        display: none !important;
+
+        @media print {
+            display: block !important;
+        }
+
+        > .tag-grid {
+            @media print {
+                position: absolute;
+                top: 0;
+                right: 4rem;
+                display: flex;
+                transform: translateY(-50%);
+                padding: 0 .8rem;
+                z-index: 99;
+                justify-content: flex-end;
+                background: #fff !important;
+            }
+        }
+
+        > .tour__price-box {
+            @media print {
+                position: absolute;
+                top: 2rem;
+                right: 4rem;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
 }
 
 .tour-comment {
@@ -451,6 +557,8 @@
 
         margin-right: 1rem;
         max-width: 3.2rem;
+        border-radius: $border-radius-base;
+        overflow: hidden;
 
         > a {
             display: block;
@@ -462,6 +570,10 @@
             width: 100%;
             height: auto;
             vertical-align: top;
+        }
+
+        @media print {
+            display: block;
         }
     }
 

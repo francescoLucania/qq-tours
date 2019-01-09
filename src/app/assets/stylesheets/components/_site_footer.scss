@@ -46,21 +46,20 @@
         > .red {
             color: $color-error;
         }
+    }
 
-        &::before {
-            position: absolute;
-            top: -1.8rem;
-            left: 50%;
-            width: calc(100% - 2rem);
-            transform: translate(-50%, -100%);
-            text-align: center;
-            color: $color-light;
-            content: attr(data-price-information);
-        }
+    &__message-price {
+        position: absolute;
+        top: -1.8rem;
+        left: 50%;
+        width: calc(100% - 2rem);
+        transform: translate(-50%, -100%);
+        text-align: center;
+        color: $color-light;
     }
 
     &__grid {
-        @include mq(md) {
+        @include mq(lg) {
             @include grid(x, space-between)
         }
 
@@ -73,9 +72,9 @@
     }
 
     &__navigate {
-        @include mq(md) {
-            @include grid-col(8/12);
-        }
+        //@include mq(md) {
+        //    @include grid-col(8/12);
+        //}
 
         @media print {
             @include grid-col(8/12);
@@ -95,7 +94,7 @@
             margin-bottom: map_get($mq-container-indents, 'sm');
 
             @include mq(md) {
-                @include grid-col(3/6);
+                @include grid-col(2/8);
             }
 
             @include mq(lg) {
@@ -104,6 +103,12 @@
 
             @media print {
                 @include grid-col(1.5/6);
+            }
+
+            &:nth-child(4) {
+                @include mq(md) {
+                    margin-left: auto;
+                }
             }
 
             > li {
@@ -134,23 +139,26 @@
         }
 
         > a {
+            display: block;
+            margin:  map_get($mq-container-indents, 'sm') * 2 auto 0;
             width: 6rem;
 
-            @include mq(sm) {
-                margin:  map_get($mq-container-indents, 'sm') * 2 auto 0;
-            }
+            //@include mq(md) {
+            //    max-width: 6rem;
+            //}
 
-            @include mq(md) {
+            @include mq(lg) {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                height: 4rem;
-                max-width: 8.5rem;
+                margin-top: 0;
+                height: 8rem;
+                //max-width: 8.5rem;
             }
 
             @media print {
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 height: 4rem;
             }
 

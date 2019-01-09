@@ -2,4 +2,8 @@
 
 .container {
     @include container;
+
+    @media print {
+        min-width: 860px;
+    }
 }

@@ -265,4 +265,6 @@ $(document).on('click', '.js-read-more', function () {
     var $thisHideContent = $this.closest('.js-hotel-description').find('.js-hide-content');
 
     $thisHideContent.css('display', 'block');
+
+    return false;
 });
