@@ -262,9 +262,11 @@ $(document).on('click', '.js-read-more', function () {
 
     var $this = $(this);
 
-    var $thisHideContent = $this.closest('.js-hotel-description').find('.js-hide-content');
+    var $thisHideContent = $this.closest('.js-content-description').find('.js-hide-content');
 
     $thisHideContent.css('display', 'block');
+
+    $this.css('display', 'none');
 
     return false;
 });

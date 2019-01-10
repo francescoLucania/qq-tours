@@ -1,10 +1,20 @@
 @charset "UTF-8";
 
 .hotel-box {
+    margin: 2.4rem 0;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
     @media print {
         padding: 1rem;
         border-radius: 1rem;
         border: 2px solid #000;
+
+        &:first-child {
+            margin-top: -1rem;
+        }
 
         &:not(:last-child) {
             margin-bottom: map_get($mq-container-indents, 'md')
@@ -23,6 +33,7 @@
     @include mq(md) {
         display: flex;
         align-items: flex-start;
+        flex-wrap: wrap;
         margin-left: 0;
         margin-right: 0;
         padding: .9rem;
@@ -33,6 +44,10 @@
         margin-right: 0;
         padding-top: 0;
         border: 0;
+    }
+
+    > .tour-comment {
+        width: 100%;
     }
 
     &__photo {
@@ -76,6 +91,10 @@
             &:not(:last-child) {
                 margin-bottom: .4rem;
             }
+
+            @media print {
+                page-break-after: auto;
+            }
         }
 
         @include mq(md) {
@@ -83,11 +102,13 @@
         }
     }
 
-    .hotel-card__content {
-
+    &__content {
+        @media print {
+            page-break-after: auto;
+        }
     }
 
-    .hotel-card__content-hide {
+    &__content-hide {
         display: none;
 
         @media print {
@@ -95,7 +116,7 @@
         }
     }
 
-    .hotel-card__open-hide-content {
+    &__open-hide-content {
         @include text-md;
         @include interact(text-decoration, underline);
 
@@ -201,6 +222,10 @@
 
     &__footer {
         margin-top: .8rem;
+
+        @media print {
+            page-break-after: auto;
+        }
     }
 
     &__footer-grid {
@@ -227,6 +252,10 @@
 
         > div {
             cursor: default;
+        }
+
+        @media print {
+            page-break-after: auto;
         }
     }
 }

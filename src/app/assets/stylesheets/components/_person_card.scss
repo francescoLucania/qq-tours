@@ -70,6 +70,42 @@
             }
         }
 
+        > div {
+            display: none;
+        }
+
+        &[data-phone],
+        &[data-email] {
+            position: relative;
+
+            @media print {
+                display: inline-flex;
+                align-items: center;
+
+                > div {
+                    @include size(2.6rem);
+
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 1rem;
+                    border-radius: 50%;
+                    border: 2px solid #000;
+                    background: transparent;
+
+                    img {
+                        position: absolute !important;
+                        top: 50% !important;
+                        left: 50% !important;
+                        display: block !important;
+                        transform: translate(-50%, -50%) !important;
+                        vertical-align: top !important;
+                    }
+                }
+            }
+        }
+
         @include mq(sm) {
             margin-left: -.8rem;
             margin-right: -.8rem;

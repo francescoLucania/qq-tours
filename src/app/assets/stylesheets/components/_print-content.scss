@@ -16,11 +16,13 @@
 
     @page {
         size: auto;   /* auto is the initial value */
-        margin: 1cm 0;  /* this affects the margin in the printer settings */
+        margin: 2cm 0;  /* this affects the margin in the printer settings */
     }
 
     body {
+        display: block;
         -webkit-print-color-adjust: exact !important;
+        overflow-y: visible !important;
     }
 
     a[href]:after {

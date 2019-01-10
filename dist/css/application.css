@@ -1047,6 +1047,7 @@ a.button {
   .site-header__information {
     display: flex;
     align-items: center;
+    max-width: 50rem;
   }
 }
 
@@ -1070,8 +1071,10 @@ a.button {
 
 @media all and (min-width: 768px) {
   .site-header__logo {
+    position: relative;
     display: flex;
     align-items: center;
+    padding-right: 4rem;
     height: 8rem;
     width: auto;
   }
@@ -1082,6 +1085,27 @@ a.button {
     display: flex;
     align-items: center;
     height: 4rem;
+  }
+}
+
+.site-header__logo::before {
+  position: absolute;
+  top: .6rem;
+  right: 2rem;
+  bottom: -.4rem;
+  width: 1px;
+  background: #dbdcde;
+}
+
+@media all and (min-width: 768px) {
+  .site-header__logo::before {
+    content: "";
+  }
+}
+
+@media print {
+  .site-header__logo::before {
+    content: "";
   }
 }
 
@@ -1192,6 +1216,12 @@ a.button {
   }
 }
 
+@media print {
+  .site-header__actions > a > .icon {
+    display: none !important;
+  }
+}
+
 .site-footer {
   position: relative;
   margin-top: 7rem;
@@ -1239,6 +1269,7 @@ a.button {
   border: 1px solid #d8e1e6;
   background: #fff;
   text-align: center;
+  font-weight: 700;
   color: #1a1a1a;
 }
 
@@ -1702,11 +1733,13 @@ a.button {
   @page {
     size: auto;
     /* auto is the initial value */
-    margin: 1cm 0;
+    margin: 2cm 0;
     /* this affects the margin in the printer settings */
   }
   body {
+    display: block;
     -webkit-print-color-adjust: exact !important;
+    overflow-y: visible !important;
   }
   a[href]:after {
     content: none !important;
@@ -1849,8 +1882,6 @@ a.button {
 @media print {
   .promo-information > .wysiwyg + .person-card {
     margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 2px solid #000;
   }
 }
 
@@ -1933,6 +1964,42 @@ a.button {
 
 .person-card__heading-contact-information-item[data-color="minor"] > a {
   color: #0088cc;
+}
+
+.person-card__heading-contact-information-item > div {
+  display: none;
+}
+
+.person-card__heading-contact-information-item[data-phone], .person-card__heading-contact-information-item[data-email] {
+  position: relative;
+}
+
+@media print {
+  .person-card__heading-contact-information-item[data-phone], .person-card__heading-contact-information-item[data-email] {
+    display: inline-flex;
+    align-items: center;
+  }
+  .person-card__heading-contact-information-item[data-phone] > div, .person-card__heading-contact-information-item[data-email] > div {
+    width: 2.6rem;
+    height: 2.6rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background: transparent;
+  }
+  .person-card__heading-contact-information-item[data-phone] > div img, .person-card__heading-contact-information-item[data-email] > div img {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    display: block !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+            transform: translate(-50%, -50%) !important;
+    vertical-align: top !important;
+  }
 }
 
 @media all and (max-width: 767px) {
@@ -2042,11 +2109,22 @@ a.button {
   border-radius: 4px;
 }
 
+.hotel-box {
+  margin: 2.4rem 0;
+}
+
+.hotel-box:last-child {
+  margin-bottom: 0;
+}
+
 @media print {
   .hotel-box {
     padding: 1rem;
     border-radius: 1rem;
     border: 2px solid #000;
+  }
+  .hotel-box:first-child {
+    margin-top: -1rem;
   }
   .hotel-box:not(:last-child) {
     margin-bottom: 2rem;
@@ -2066,6 +2144,7 @@ a.button {
   .hotel-card {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     margin-left: 0;
     margin-right: 0;
     padding: .9rem;
@@ -2079,6 +2158,10 @@ a.button {
     padding-top: 0;
     border: 0;
   }
+}
+
+.hotel-card > .tour-comment {
+  width: 100%;
 }
 
 .hotel-card__photo {
@@ -2138,41 +2221,54 @@ a.button {
   margin-bottom: .4rem;
 }
 
+@media print {
+  .hotel-card__information .hotel-card__content p,
+  .hotel-card__information > address {
+    page-break-after: auto;
+  }
+}
+
 @media all and (min-width: 768px) {
   .hotel-card__information {
     flex-grow: 1;
   }
 }
 
-.hotel-card .hotel-card__content-hide {
+@media print {
+  .hotel-card__content {
+    page-break-after: auto;
+  }
+}
+
+.hotel-card__content-hide {
   display: none;
 }
 
 @media print {
-  .hotel-card .hotel-card__content-hide {
+  .hotel-card__content-hide {
     display: block;
   }
 }
 
-.hotel-card .hotel-card__open-hide-content {
+.hotel-card__open-hide-content {
   font-size: 1.3rem;
   line-height: 1.385;
   color: #0088cc;
 }
 
 @media print {
-  .hotel-card .hotel-card__open-hide-content {
+  .hotel-card__open-hide-content {
     font-size: 1.4rem;
     line-height: 1.429;
   }
 }
 
-.mod_no-touchevents .hotel-card .hotel-card__open-hide-content:hover, .mod_no-touchevents .hotel-card .hotel-card__open-hide-content.hover {
+.mod_no-touchevents .hotel-card__open-hide-content:hover, .mod_no-touchevents .hotel-card__open-hide-content.hover {
   text-decoration: underline;
 }
 
 @media print {
-  .hotel-card .hotel-card__open-hide-content {
+  .hotel-card__open-hide-content {
     display: none;
   }
 }
@@ -2294,6 +2390,12 @@ a.button {
   margin-top: .8rem;
 }
 
+@media print {
+  .hotel-card__footer {
+    page-break-after: auto;
+  }
+}
+
 .hotel-card__footer-grid {
   display: flex;
   align-items: flex-end;
@@ -2323,6 +2425,12 @@ a.button {
   cursor: default;
 }
 
+@media print {
+  .hotel-card__footer-grid {
+    page-break-after: auto;
+  }
+}
+
 .tours {
   margin-top: .8rem;
 }
@@ -2350,7 +2458,7 @@ a.button {
 }
 
 .tours > .tour:not(:first-child) {
-  margin-top: .5rem;
+  margin-top: .8rem;
 }
 
 @media print {
@@ -2389,6 +2497,7 @@ a.button {
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
+    page-break-after: auto;
   }
 }
 
@@ -2595,7 +2704,7 @@ a.button {
 
 @media print {
   .tour__date-information-col {
-    width: 40%;
+    min-width: 30% !important;
   }
 }
 
@@ -2843,6 +2952,7 @@ a.button {
   .tour__flight-information-col {
     flex: 0 0 100%;
     max-width: 100%;
+    margin-bottom: 1rem;
   }
 }
 
@@ -2887,7 +2997,7 @@ a.button {
 @media print {
   .tour__flight-information-box {
     display: block;
-    margin-top: 0;
+    margin-top: 1rem;
   }
 }
 
@@ -2904,6 +3014,7 @@ a.button {
 
 @media print {
   .tour__flight-information-col .tour__flight-information-item {
+    padding: .3rem 0;
     border: 0 !important;
   }
 }
@@ -3018,11 +3129,9 @@ a.button {
   }
 }
 
-@media all and (min-width: 980px) {
-  .tour__col-title[data-fli] {
-    position: relative;
-    padding-left: 2.4rem;
-  }
+.tour__col-title[data-fli] {
+  position: relative;
+  padding-left: 2.4rem;
 }
 
 .tour__col-title[data-fli] > i {
@@ -3031,7 +3140,6 @@ a.button {
   position: absolute;
   top: 0;
   left: 0;
-  display: none;
   background-position: 50%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -3105,7 +3213,7 @@ a.button {
 .tour__price {
   font-size: 1.8rem;
   line-height: 1;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .tour__old-price {
@@ -3210,6 +3318,7 @@ a.button {
   width: 3.2rem;
   height: 3.2rem;
   margin-right: 1rem;
+  min-width: 3.2rem;
   max-width: 3.2rem;
   border-radius: 0.4rem;
   overflow: hidden;
@@ -3230,6 +3339,7 @@ a.button {
 @media print {
   .tour-comment__photo {
     display: block;
+    page-break-after: auto;
   }
 }
 
@@ -3256,6 +3366,39 @@ a.button {
 @media print {
   .tour-comment__content {
     margin-top: .4rem;
+  }
+}
+
+.tour-comment__content-hide {
+  display: none;
+}
+
+@media print {
+  .tour-comment__content-hide {
+    display: block;
+  }
+}
+
+.tour-comment__open-hide-content {
+  font-size: 1.3rem;
+  line-height: 1.385;
+  color: #0088cc;
+}
+
+@media print {
+  .tour-comment__open-hide-content {
+    font-size: 1.4rem;
+    line-height: 1.429;
+  }
+}
+
+.mod_no-touchevents .tour-comment__open-hide-content:hover, .mod_no-touchevents .tour-comment__open-hide-content.hover {
+  text-decoration: underline;
+}
+
+@media print {
+  .tour-comment__open-hide-content {
+    display: none;
   }
 }
 

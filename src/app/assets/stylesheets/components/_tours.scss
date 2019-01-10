@@ -21,7 +21,7 @@
         }
 
         &:not(:first-child) {
-            margin-top: .5rem;
+            margin-top: .8rem;
         }
 
         @media print {
@@ -63,6 +63,7 @@
         border-left: 0;
         border-right: 0;
         border-bottom: 0;
+        page-break-after: auto;
     }
 
     &__header {
@@ -181,7 +182,7 @@
         }
 
         @media print  {
-            width: 40%;
+            min-width: 30% !important;
         }
     }
 
@@ -275,6 +276,7 @@
 
         @media print {
             @include grid-col(12/12);
+            margin-bottom: 1rem;
         }
     }
 
@@ -293,12 +295,11 @@
 
         @media print {
             display: block;
-            margin-top: 0;
+            margin-top: 1rem;
         }
     }
 
     &__flight-information-item {
-
         .tour__flight-information-col & {
             @include mq(sm) {
                 margin: 0 calc(-1rem - 1px);
@@ -311,6 +312,7 @@
             }
 
             @media print {
+                padding: .3rem 0;
                 border: 0 !important;
             }
         }
@@ -391,10 +393,10 @@
         }
 
         &[data-fli] {
-            @include mq(lg) {
+            //@include mq(lg) {
                 position: relative;
                 padding-left: 2.4rem;
-            }
+            //}
 
             > i {
                 @include size(1.6rem, 1.1rem);
@@ -402,7 +404,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                display: none;
+                //display: none;
                 background: {
                     position: 50%;
                     size: contain;
@@ -470,7 +472,7 @@
     &__price {
         @include font(1.8rem, 1.8rem);
 
-        font-weight: 600;
+        font-weight: 700;
     }
 
     &__old-price {
@@ -556,6 +558,7 @@
         @include size(3.2rem);
 
         margin-right: 1rem;
+        min-width: 3.2rem;
         max-width: 3.2rem;
         border-radius: $border-radius-base;
         overflow: hidden;
@@ -574,6 +577,7 @@
 
         @media print {
             display: block;
+            page-break-after: auto;
         }
     }
 
@@ -589,6 +593,25 @@
 
         @media print {
             margin-top: .4rem;
+        }
+    }
+
+    &__content-hide {
+        display: none;
+
+        @media print {
+            display: block;
+        }
+    }
+
+    &__open-hide-content {
+        @include text-md;
+        @include interact(text-decoration, underline);
+
+        color: $color-minor;
+
+        @media print {
+            display: none;
         }
     }
 }
