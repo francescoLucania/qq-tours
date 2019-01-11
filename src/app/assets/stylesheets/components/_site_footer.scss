@@ -56,7 +56,12 @@
         width: calc(100% - 2rem);
         transform: translate(-50%, -100%);
         text-align: center;
+        font-weight: 400;
         color: $color-light;
+
+        @include mq(sm) {
+            top: -1.2rem;
+        }
     }
 
     &__grid {
@@ -131,9 +136,10 @@
     &__logo {
         display: block;
         margin: 0 auto;
+        max-width: 8.5rem;
 
         @include mq(lg) {
-            @include grid-col(1/12);
+            @include grid-col(4/12);
 
             width: auto;
             margin: 0;
@@ -142,11 +148,11 @@
         > a {
             display: block;
             margin:  map_get($mq-container-indents, 'sm') * 2 auto 0;
-            width: 6rem;
+            //width: 6rem;
 
-            //@include mq(md) {
-            //    max-width: 6rem;
-            //}
+            @include mq(md) {
+                max-width: 30rem;
+            }
 
             @include mq(lg) {
                 display: flex;
@@ -169,7 +175,6 @@
                 vertical-align: top;
 
                 @include mq(sm) {
-                    max-width: 6rem;;
                     margin: 2rem  auto 0;
                 }
 

@@ -3,9 +3,10 @@ header.site-header(role='header')
         .site-header__grid
             .site-header__information
                 a.site-header__logo(href='#')
-                    img(src='img/3_8686_logo.png' alt='Company name' title='Company name')
+                    img(src=logoUrl alt=companyName)
 
-                h1.site-header__title: a(href='#') СоюзТур
+                h1.site-header__title
+                    a(href='#')=companyName
 
             .site-header__actions
                 a(href='tel:889206616644')
