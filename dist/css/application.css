@@ -1086,6 +1086,7 @@ a.button {
     display: flex;
     align-items: center;
     height: 4rem;
+    margin-right: 3rem;
   }
 }
 
@@ -1151,7 +1152,8 @@ a.button {
 
 @media print {
   .site-header__title {
-    margin-left: 2rem;
+    text-align: left;
+    margin-right: 1.6rem;
   }
 }
 
@@ -1244,8 +1246,20 @@ a.button {
   }
 }
 
+@media print {
+  .footer-price-info {
+    margin-bottom: 0 !important;
+  }
+}
+
 .footer-price-info + .site-footer {
   margin-top: 0 !important;
+}
+
+@media print {
+  .footer-price-info + .site-footer {
+    margin-top: 0 !important;
+  }
 }
 
 .site-footer {
@@ -1279,7 +1293,6 @@ a.button {
     position: relative;
     padding: 4rem 0;
     border: 0;
-    page-break-inside: avoid;
   }
 }
 
@@ -1319,8 +1332,15 @@ a.button {
 
 @media print {
   .site-footer__massage {
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    margin: 0 auto 2rem;
+    min-width: 42.6rem;
+    max-width: 45rem;
     width: auto;
-    vertical-align: top;
   }
 }
 
@@ -1414,8 +1434,8 @@ a.button {
 
 @media print {
   .site-footer__navigate {
-    flex: 0 0 66.667%;
-    max-width: 66.667%;
+    flex: 0 0 83.333%;
+    max-width: 83.333%;
   }
 }
 
@@ -1551,15 +1571,15 @@ a.button {
 }
 
 .site-footer__navigate-grid > ul > li {
-  font-size: 1.1rem;
-  line-height: 1.364;
+  font-size: 1.3rem;
+  line-height: 1.385;
   color: #9ea0a6;
 }
 
-@media all and (min-width: 980px) {
+@media print {
   .site-footer__navigate-grid > ul > li {
-    font-size: 1.3rem;
-    line-height: 1.385;
+    font-size: 1.4rem;
+    line-height: 1.429;
   }
 }
 
@@ -1602,13 +1622,28 @@ a.button {
   }
 }
 
+@media print {
+  .site-footer__logo {
+    flex: 0 0 16.667%;
+    max-width: 16.667%;
+    margin-top: 0;
+    align-self: flex-start;
+  }
+}
+
 .site-footer__logo > a {
   display: block;
   margin: 4rem auto 0;
-  max-height: 100%;
+  max-height: 8rem;
 }
 
 @media all and (min-width: 768px) {
+  .site-footer__logo > a {
+    max-width: 15rem;
+  }
+}
+
+@media print {
   .site-footer__logo > a {
     max-width: 15rem;
   }
@@ -1627,7 +1662,8 @@ a.button {
   .site-footer__logo > a {
     display: flex;
     align-items: flex-start;
-    height: 4rem;
+    margin-top: 0;
+    max-height: 100%;
   }
 }
 
@@ -1647,6 +1683,14 @@ a.button {
 @media all and (min-width: 768px) {
   .site-footer__logo > a > img {
     max-width: 100%;
+  }
+}
+
+@media print {
+  .site-footer__logo > a > img {
+    margin: 0;
+    align-self: flex-start;
+    max-height: none;
   }
 }
 

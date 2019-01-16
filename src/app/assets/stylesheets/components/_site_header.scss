@@ -76,6 +76,7 @@
             display: flex;
             align-items: center;
             height: 4rem;
+            margin-right: 3rem;
         }
 
         &::before {
@@ -127,7 +128,8 @@
         }
 
         @media print {
-            margin-left: map_get($mq-container-indents, 'md')
+            text-align: left;
+            margin-right: 1.6rem;
         }
     }
 

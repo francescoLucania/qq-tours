@@ -12,8 +12,16 @@
         margin: 2rem 0 3rem;
     }
 
+    @media print {
+        margin-bottom: 0 !important;
+    }
+
     + .site-footer {
         margin-top: 0 !important;
+
+        @media print {
+            margin-top: 0 !important;
+        }
     }
 }
 
@@ -40,7 +48,6 @@
         position: relative;
         padding: map_get($mq-container-indents, 'md') * 2 0;
         border: 0;
-        page-break-inside: avoid;
     }
 
     &__massage {
@@ -72,8 +79,14 @@
         }
 
         @media print {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0,0);
+            margin: 0 auto 2rem;
+            min-width: 42.6rem;
+            max-width: 45rem;
             width: auto;
-            vertical-align: top;
         }
 
         &:empty {
@@ -96,11 +109,11 @@
 
     &__grid {
         @include mq(lg) {
-            @include grid(x, space-between)
+            @include grid(x, space-between, flex-start)
         }
 
         @media print {
-            @include grid(x, space-between);
+            @include grid(x, space-between, flex-start);
 
             padding-top: 1.9rem;
             border-top: 1px solid #000;
@@ -113,7 +126,7 @@
         }
 
         @media print {
-            @include grid-col(8/12);
+            @include grid-col(10/12);
         }
     }
 
@@ -150,13 +163,9 @@
             }
 
             > li {
-                @include text-sm;
+                @include text-md;
 
                 color: $color-light;
-
-                @include mq(lg) {
-                    @include text-md
-                }
 
                 > a {
                     color: $color-minor;
@@ -176,13 +185,23 @@
             margin: 0;
         }
 
+        @media print {
+            @include grid-col(2/12);
+
+            margin-top: 0;
+            align-self: flex-start;
+        }
+
         > a {
             display: block;
             margin:  map_get($mq-container-indents, 'sm') * 2 auto 0;
-            max-height: 100%;
-            //width: 6rem;
+            max-height: 8rem;
 
             @include mq(md) {
+                max-width: 15rem;
+            }
+
+            @media print {
                 max-width: 15rem;
             }
 
@@ -197,7 +216,8 @@
             @media print {
                 display: flex;
                 align-items: flex-start;
-                height: 4rem;
+                margin-top: 0;
+                max-height: 100%;
             }
 
             > img {
@@ -212,6 +232,12 @@
 
                 @include mq(md) {
                     max-width: 100%;
+                }
+
+                @media print {
+                    margin: 0;
+                    align-self: flex-start;
+                    max-height: none;
                 }
             }
         }
