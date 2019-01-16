@@ -1045,9 +1045,9 @@ a.button {
 
 @media all and (min-width: 768px) {
   .site-header__information {
+    flex: 1;
     display: flex;
     align-items: center;
-    max-width: 50rem;
   }
 }
 
@@ -1059,13 +1059,13 @@ a.button {
 }
 
 .site-header__logo {
-  display: block;
+  display: inline-block;
 }
 
 @media all and (max-width: 767px) {
   .site-header__logo {
     margin: 0 auto 2rem;
-    max-width: 8.5rem;
+    max-height: 8.5rem;
   }
 }
 
@@ -1091,9 +1091,9 @@ a.button {
 
 .site-header__logo::before {
   position: absolute;
-  top: .6rem;
+  top: 0;
   right: 2rem;
-  bottom: -.4rem;
+  bottom: 0;
   width: 1px;
   background: #dbdcde;
 }
@@ -1115,11 +1115,17 @@ a.button {
   width: auto;
   max-width: 100%;
   vertical-align: top;
+  max-height: 8rem;
 }
 
 @media all and (min-width: 768px) {
   .site-header__logo > img {
-    max-height: 100%;
+    max-width: 15rem;
+  }
+}
+
+@media all and (min-width: 980px) {
+  .site-header__logo > img {
     max-width: 30rem;
   }
 }
@@ -1127,7 +1133,6 @@ a.button {
 @media print {
   .site-header__logo > img {
     max-width: 100%;
-    max-height: 100%;
   }
 }
 
@@ -1140,7 +1145,7 @@ a.button {
 @media all and (min-width: 768px) {
   .site-header__title {
     margin-top: -.3rem;
-    margin-left: 2rem;
+    margin-right: 1.6rem;
   }
 }
 
@@ -1224,6 +1229,25 @@ a.button {
   }
 }
 
+.footer-price-info {
+  font-size: 1.3rem;
+  line-height: 1.538;
+  margin: 1rem 0 3.5rem;
+  text-align: center;
+  font-weight: 400;
+  color: #9ea0a6;
+}
+
+@media all and (min-width: 768px) {
+  .footer-price-info {
+    margin: 2rem 0 3rem;
+  }
+}
+
+.footer-price-info + .site-footer {
+  margin-top: 0 !important;
+}
+
 .site-footer {
   position: relative;
   margin-top: 7rem;
@@ -1255,6 +1279,7 @@ a.button {
     position: relative;
     padding: 4rem 0;
     border: 0;
+    page-break-inside: avoid;
   }
 }
 
@@ -1281,8 +1306,26 @@ a.button {
   }
 }
 
+@media all and (min-width: 768px) {
+  .site-footer__massage {
+    min-width: 42.6rem;
+    white-space: nowrap;
+  }
+}
+
 .site-footer__massage > .red {
   color: #ff0000;
+}
+
+@media print {
+  .site-footer__massage {
+    width: auto;
+    vertical-align: top;
+  }
+}
+
+.site-footer__massage:empty {
+  display: none;
 }
 
 .site-footer__message-price {
@@ -1292,9 +1335,6 @@ a.button {
   width: calc(100% - 2rem);
   -webkit-transform: translate(-50%, -100%);
           transform: translate(-50%, -100%);
-  text-align: center;
-  font-weight: 400;
-  color: #9ea0a6;
 }
 
 @media all and (max-width: 767px) {
@@ -1341,6 +1381,34 @@ a.button {
     flex-flow: row wrap;
     padding-top: 1.9rem;
     border-top: 1px solid #000;
+  }
+}
+
+@media all and (min-width: 980px) {
+  .site-footer__navigate {
+    flex: 0 0 70.833%;
+    max-width: 70.833%;
+  }
+}
+
+@media all and (min-width: 980px) and (max-width: 767px) {
+  .site-footer__navigate {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 980px) and (min-width: 768px) {
+  .site-footer__navigate {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media all and (min-width: 980px) and (min-width: 980px) {
+  .site-footer__navigate {
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 }
 
@@ -1444,6 +1512,7 @@ a.button {
   .site-footer__navigate-grid > ul {
     flex: 0 0 25%;
     max-width: 25%;
+    margin-bottom: 0;
   }
 }
 
@@ -1501,13 +1570,12 @@ a.button {
 .site-footer__logo {
   display: block;
   margin: 0 auto;
-  max-width: 8.5rem;
 }
 
 @media all and (min-width: 980px) {
   .site-footer__logo {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
+    flex: 0 0 25%;
+    max-width: 25%;
     width: auto;
     margin: 0;
   }
@@ -1537,11 +1605,12 @@ a.button {
 .site-footer__logo > a {
   display: block;
   margin: 4rem auto 0;
+  max-height: 100%;
 }
 
 @media all and (min-width: 768px) {
   .site-footer__logo > a {
-    max-width: 30rem;
+    max-width: 15rem;
   }
 }
 
@@ -1551,7 +1620,6 @@ a.button {
     justify-content: flex-end;
     align-items: center;
     margin-top: 0;
-    height: 8rem;
   }
 }
 
@@ -1567,6 +1635,7 @@ a.button {
   display: block;
   width: auto;
   vertical-align: top;
+  max-height: 8rem;
 }
 
 @media all and (max-width: 767px) {
@@ -1578,14 +1647,6 @@ a.button {
 @media all and (min-width: 768px) {
   .site-footer__logo > a > img {
     max-width: 100%;
-    max-height: 100%;
-  }
-}
-
-@media print {
-  .site-footer__logo > a > img {
-    max-width: 100%;
-    max-height: 100%;
   }
 }
 
@@ -2094,6 +2155,7 @@ a.button {
 .person-card__photo {
   width: 3.2rem;
   height: 3.2rem;
+  position: relative;
   margin-right: 2rem;
   min-width: 3.2rem;
 }
@@ -2120,6 +2182,11 @@ a.button {
 .person-card__photo > img {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 4px;
 }
 
@@ -2156,9 +2223,6 @@ a.button {
 
 @media all and (min-width: 768px) {
   .hotel-card {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
     margin-left: 0;
     margin-right: 0;
     padding: .9rem;
@@ -2176,6 +2240,13 @@ a.button {
 
 .hotel-card > .tour-comment {
   width: 100%;
+}
+
+@media all and (min-width: 768px) {
+  .hotel-card__grid {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 .hotel-card__photo {
@@ -2214,6 +2285,12 @@ a.button {
   vertical-align: top;
 }
 
+@media all and (min-width: 768px) {
+  .hotel-card__information {
+    flex-grow: 1;
+  }
+}
+
 .hotel-card__information .hotel-card__content p,
 .hotel-card__information > address {
   font-size: 1.3rem;
@@ -2239,12 +2316,6 @@ a.button {
   .hotel-card__information .hotel-card__content p,
   .hotel-card__information > address {
     page-break-after: auto;
-  }
-}
-
-@media all and (min-width: 768px) {
-  .hotel-card__information {
-    flex-grow: 1;
   }
 }
 
@@ -2511,7 +2582,6 @@ a.button {
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
-    page-break-after: auto;
   }
 }
 
@@ -2724,8 +2794,8 @@ a.button {
 
 @media all and (min-width: 768px) {
   .tour__fb-col {
-    flex: 0 0 41.667%;
-    max-width: 41.667%;
+    flex: 0 0 38.333%;
+    max-width: 38.333%;
   }
 }
 
@@ -2780,10 +2850,8 @@ a.button {
 
 @media print {
   .tour__fb-col {
-    flex: 0 0 31.667%;
-    max-width: 31.667%;
-    width: 40%;
-    margin-right: 4rem;
+    flex: 0 0 41.667%;
+    max-width: 41.667%;
   }
 }
 
@@ -3028,7 +3096,8 @@ a.button {
 
 @media print {
   .tour__flight-information-col .tour__flight-information-item {
-    padding: .3rem 0;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
     border: 0 !important;
   }
 }
@@ -3331,6 +3400,7 @@ a.button {
 .tour-comment__photo {
   width: 3.2rem;
   height: 3.2rem;
+  position: relative;
   margin-right: 1rem;
   min-width: 3.2rem;
   max-width: 3.2rem;
@@ -3344,9 +3414,13 @@ a.button {
 
 .tour-comment__photo > a > img,
 .tour-comment__photo > img {
-  min-width: 3.2rem;
   width: 100%;
-  height: auto;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: top;
 }
 
@@ -3422,6 +3496,7 @@ a.button {
   position: relative;
   margin-left: .8rem;
   top: .4rem;
+  min-width: 1.9rem;
   border-radius: .8rem;
   border: 1px solid #9ea0a6;
   background: transparent;

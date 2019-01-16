@@ -179,6 +179,7 @@
     &__photo {
         @include size(3.2rem);
 
+        position: relative;
         margin-right: map_get($mq-container-indents, 'md');;
         min-width: 3.2rem;
 
@@ -200,6 +201,10 @@
         > img {
             @include size(100%);
 
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
             border-radius: 4px;
         }
     }

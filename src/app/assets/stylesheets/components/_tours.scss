@@ -63,7 +63,7 @@
         border-left: 0;
         border-right: 0;
         border-bottom: 0;
-        page-break-after: auto;
+        //page-break-inside: avoid;
     }
 
     &__header {
@@ -188,7 +188,7 @@
 
     &__fb-col {
         @include mq(md) {
-            @include grid-col(2.5/6);
+            @include grid-col(2.3/6);
         }
 
         @include mq(lg) {
@@ -196,10 +196,7 @@
         }
 
         @media print  {
-            @include grid-col(3.8/12);
-
-            width: 40%;
-            margin-right: 4rem;
+            @include grid-col(5/12);
         }
     }
 
@@ -276,6 +273,7 @@
 
         @media print {
             @include grid-col(12/12);
+
             margin-bottom: 1rem;
         }
     }
@@ -312,7 +310,8 @@
             }
 
             @media print {
-                padding: .3rem 0;
+                padding-top: .3rem;
+                padding-bottom: .3rem;
                 border: 0 !important;
             }
         }
@@ -557,6 +556,7 @@
     &__photo {
         @include size(3.2rem);
 
+        position: relative;
         margin-right: 1rem;
         min-width: 3.2rem;
         max-width: 3.2rem;
@@ -569,9 +569,12 @@
 
         > a > img,
         > img {
-            min-width: 3.2rem;
-            width: 100%;
-            height: auto;
+            @include size(100%);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
             vertical-align: top;
         }
 

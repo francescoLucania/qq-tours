@@ -1,5 +1,22 @@
 @charset "UTF-8";
 
+.footer-price-info {
+    @include font(1.3rem, 2rem);
+
+    margin: 1rem 0 3.5rem;
+    text-align: center;
+    font-weight: 400;
+    color: $color-light;
+
+    @include mq(md) {
+        margin: 2rem 0 3rem;
+    }
+
+    + .site-footer {
+        margin-top: 0 !important;
+    }
+}
+
 .site-footer {
     position: relative;
     margin-top: 7rem;
@@ -23,6 +40,7 @@
         position: relative;
         padding: map_get($mq-container-indents, 'md') * 2 0;
         border: 0;
+        page-break-inside: avoid;
     }
 
     &__massage {
@@ -44,8 +62,22 @@
             width: 30rem;
         }
 
+        @include mq(md) {
+            min-width: 42.6rem;
+            white-space: nowrap;
+        }
+
         > .red {
             color: $color-error;
+        }
+
+        @media print {
+            width: auto;
+            vertical-align: top;
+        }
+
+        &:empty {
+            display: none;
         }
     }
 
@@ -55,9 +87,7 @@
         left: 50%;
         width: calc(100% - 2rem);
         transform: translate(-50%, -100%);
-        text-align: center;
-        font-weight: 400;
-        color: $color-light;
+
 
         @include mq(sm) {
             top: -1.2rem;
@@ -78,9 +108,9 @@
     }
 
     &__navigate {
-        //@include mq(md) {
-        //    @include grid-col(8/12);
-        //}
+        @include mq(lg) {
+            @include grid-col(8.5/12);
+        }
 
         @media print {
             @include grid-col(8/12);
@@ -105,6 +135,8 @@
 
             @include mq(lg) {
                 @include grid-col(2/8);
+
+                margin-bottom: 0;
             }
 
             @media print {
@@ -136,10 +168,9 @@
     &__logo {
         display: block;
         margin: 0 auto;
-        max-width: 8.5rem;
 
         @include mq(lg) {
-            @include grid-col(4/12);
+            @include grid-col(3/12);
 
             width: auto;
             margin: 0;
@@ -148,10 +179,11 @@
         > a {
             display: block;
             margin:  map_get($mq-container-indents, 'sm') * 2 auto 0;
+            max-height: 100%;
             //width: 6rem;
 
             @include mq(md) {
-                max-width: 30rem;
+                max-width: 15rem;
             }
 
             @include mq(lg) {
@@ -159,7 +191,6 @@
                 justify-content: flex-end;
                 align-items: center;
                 margin-top: 0;
-                height: 8rem;
                 //max-width: 8.5rem;
             }
 
@@ -173,6 +204,7 @@
                 display: block;
                 width: auto;
                 vertical-align: top;
+                max-height: 8rem;
 
                 @include mq(sm) {
                     margin: 2rem  auto 0;
@@ -180,12 +212,6 @@
 
                 @include mq(md) {
                     max-width: 100%;
-                    max-height: 100%;
-                }
-
-                @media print {
-                    max-width: 100%;
-                    max-height: 100%;
                 }
             }
         }
